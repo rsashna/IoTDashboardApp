@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div class="wrapper">
+    <div id="app">
     <div class="dashboardpage">
         <section class="themecontainer">
           <!-- theme switcher -->
@@ -33,6 +34,7 @@
       </section>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -89,9 +91,13 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+.wrapper{
+  display: flex;
+  align-content: center;
+}
 .dashboardpage{
-  // display: flex;
-  // justify-content: space-around;
+  display: block;
+  justify-content: center;
   width: 1000px;
 }
 .theme{
@@ -101,5 +107,19 @@ export default {
 .themecontainer{
   display: flex;
   justify-content: flex-end;
+}
+@media (max-width: 770px) {
+  .dashboardpage{
+    display: block;
+    justify-content: center;
+    width: 750px;
+  }
+}
+@media (max-width: 415px) {
+  .dashboardpage{
+    display: block;
+    justify-content: center;
+    width: 360px;
+  }
 }
 </style>
