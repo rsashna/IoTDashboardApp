@@ -6,6 +6,7 @@ import store from "./store";
 // custom styles
 import "./assets/css/styles.scss";
 
+
 createApp(App)
   .use(store)
   .use(router)
