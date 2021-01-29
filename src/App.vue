@@ -36,6 +36,9 @@
         <Button label="ClickHere"></Button>
       </section>
       <section>
+        <estimatedCosts></estimatedCosts>
+      </section>
+      <section>
         <div class="trendLineContainer">
           <trendLine></trendLine>
         </div>
@@ -49,13 +52,15 @@
 // primeVUE compoenets
 import Button from "primevue/button";
 import trendLine from "./components/trendLine";
+import estimatedCosts from "./components/estimatedCosts";
 
 
 export default {
   name: "app",
   components: {
     Button,
-    trendLine
+    trendLine,
+    estimatedCosts
   },
   data() {
     return {
