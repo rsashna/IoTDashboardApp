@@ -12,35 +12,70 @@
           />
           <label for="theme-switch">
             <span v-if="darkMode === true">
-              <img class="theme" src="./assets/suncloud.png">
+              <!-- <img class="theme" src="./assets/suncloud.png"> -->
+              <font-awesome-icon
+                icon="sun"
+                size="2x"
+                fixed-width
+                style="color: var(--dynamic-subtitle-color);">
+              </font-awesome-icon>
+
             </span>
             <span v-else>
-              <img class="theme" src="./assets/suncloud.png">
+              <!-- <img class="theme" src="./assets/suncloud.png"> -->
+              <font-awesome-icon
+                icon="moon"
+                size="2x"
+                fixed-width
+                style="color: var(--dynamic-subtitle-color);">
+              </font-awesome-icon>
             </span>
           </label>
         </section>
       <section class="main-title">
         <div class="header-top">
           <div class="container">
-            <h1 class="title dynamic-title">
+            <h3 class="title dynamic-title">
               <span v-if="darkMode === true"></span>
               <span v-else></span>
-            </h1>
-            <h2 class="subtitle dynamic-subtitle">
-              Home Iot Dashboard
-            </h2>
-
+            </h3>
+            <h3 class="title dynamic-title">
+              Home IoT Dashboard
+            </h3>
           </div>
         </div>
       </section>
+      <!-- <section>
+         <Button label="ClickHere"></Button>
+      </section> -->
       <section class= "rowContainer">
-<section> <statusofdevices class="item"> </statusofdevices> </section>
-<section> <livestream class="item"> </livestream> </section>
-</section>
+      <section>
+        <statusofdevices class="item"> </statusofdevices>
+      </section>
+      <section>
+        <livestream class="item"> </livestream>
+      </section>
+      </section>
+      <sectionrow class="rowcontainer">
+        <section>
+          <estimatedCosts class="rowitem"></estimatedCosts>
+        </section>
+        <section>
+          <div class="trendLineContainer">
+            <trendLine class="rowitem"></trendLine>
+          </div>
+        </section>
+    </sectionrow>
     </div>
   </div>
 </div>
 </template>
+
+<script>
+// primeVUE compoenets
+// import Button from "primevue/button";
+import trendLine from "./components/trendLine";
+import estimatedCosts from "./components/estimatedCosts";
 
 
 <script>
@@ -49,8 +84,11 @@ import livestream from "./components/livestream";
 export default {
   name: "app",
   components: {
+    // Button,
     statusofdevices,
     livestream
+    trendLine,
+    estimatedCosts
   },
   data() {
     return {
@@ -108,6 +146,7 @@ margin: 50px;
 }
 .wrapper{
   display: flex;
+  justify-content: center;
   align-content: center;
 }
 .dashboardpage{
@@ -126,6 +165,13 @@ margin: 50px;
 .themecontainer{
   display: flex;
   justify-content: flex-end;
+}
+.rowcontainer{
+  display: flex;
+  flex-direction: row;
+}
+.rowitem{
+  margin: 20px;
 }
 @media (max-width: 770px) {
   .dashboardpage{

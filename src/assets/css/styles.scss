@@ -18,12 +18,17 @@ html, body {
 }
 
 .dynamic-title {
-  color: var(--dynamic-title-color);
+  color: var(--dynamic-subtitle-color);
+  font-size: 35px;
 }
 
 .dynamic-subtitle {
   color: var(--dynamic-subtitle-color);
   padding-top: 10px;
+}
+
+.dynamic-borders {
+  color: var(--dynamic-border-color);
 }
 
 /*
