@@ -1,19 +1,17 @@
 <template>
 <div class="container">
   <div class="wrapper" >
-<h3 class="subtitle dynamic-subtitle"> View livestream of Door </h3>
-</div>
+    <h3 class="subtitle dynamic-subtitle"> View livestream of Door </h3>
+  </div>
 <!-- closing the header tag -->
   </div>
-
-
 </template>
 
 <script>
 export default {
   data(){
-return{
-}
+    return{
+    }
   },
   methods:{
   }

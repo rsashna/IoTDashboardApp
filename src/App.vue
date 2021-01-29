@@ -19,7 +19,6 @@
                 fixed-width
                 style="color: var(--dynamic-subtitle-color);">
               </font-awesome-icon>
-
             </span>
             <span v-else>
               <!-- <img class="theme" src="./assets/suncloud.png"> -->
@@ -76,9 +75,6 @@
 // import Button from "primevue/button";
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
-
-
-<script>
 import statusofdevices from "./components/statusofdevices";
 import livestream from "./components/livestream";
 export default {
@@ -86,7 +82,7 @@ export default {
   components: {
     // Button,
     statusofdevices,
-    livestream
+    livestream,
     trendLine,
     estimatedCosts
   },
