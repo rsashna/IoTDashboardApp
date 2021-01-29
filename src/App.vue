@@ -32,16 +32,30 @@
           </div>
         </div>
       </section>
+      <section>
+        <Button label="ClickHere"></Button>
+      </section>
+      <section>
+        <div class="trendLineContainer">
+          <trendLine></trendLine>
+        </div>
+      </section>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+// primeVUE compoenets
+import Button from "primevue/button";
+import trendLine from "./components/trendLine";
+
 
 export default {
   name: "app",
   components: {
+    Button,
+    trendLine
   },
   data() {
     return {
