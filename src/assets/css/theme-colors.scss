@@ -1,0 +1,18 @@
+// In the ‘theme-colors.scss‘ file, we’ll keep colors and in the ‘styles.scss‘ file, we’ll design.
+
+:root {
+    // --app-background-color: #FFFFFF;
+    --app-background-color: #f2f6fa;
+    --dynamic-title-color: #4a4a4a;
+    --dynamic-subtitle-color: #4a4a4a;
+    --dynamic-border-color: #4a4a4a;
+}
+
+[theme="dark"] {
+    --app-background-color: #141d26;
+    --dynamic-title-color: #b9f9fa;
+    --dynamic-subtitle-color: #b9f9fa;
+    --dynamic-border-color: #b9f9fa;
+    // --dynamic-subtitle-color: cyan;
+    // --dynamic-border-color: cyan;
+}
