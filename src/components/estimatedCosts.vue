@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="subtitle dynamic-subtitle">
     <div class="costContainer">
       <div class="costTitle">Estimated Costs</div>
       <div class="costLabel">Weekly</div>
@@ -22,21 +22,23 @@
   justify-content: center;
   width: 200px;
   height: 300px;
-  background-color: #444444;
+  margin-top: 20px;
+  // background-color: #444444;
   border-style: solid;
-  border-color: cyan;
+  // border-color: cyan;
   border-width: medium;
   border-radius: 5px;
 }
 .costTitle{
   padding: 8px;
+  padding-bottom: 15px;
   font-family: sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
   text-decoration-style: solid;
-  color: cyan;
+  // color: cyan;
 }
 .costLabel{
   padding: 8px;
@@ -46,7 +48,6 @@
   font-size: 18px;
   text-align: center;
   text-decoration-style: solid;
-  color: cyan;
 }
 .costCalc{
   padding: 8px;
@@ -56,6 +57,5 @@
   font-size: 30px;
   text-align: center;
   text-decoration-style: solid;
-  color: cyan;
 }
 </style>

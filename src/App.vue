@@ -12,37 +12,52 @@
           />
           <label for="theme-switch">
             <span v-if="darkMode === true">
-              <img class="theme" src="./assets/suncloud.png">
+              <!-- <img class="theme" src="./assets/suncloud.png"> -->
+              <font-awesome-icon
+                icon="sun"
+                size="2x"
+                fixed-width
+                style="color: var(--dynamic-subtitle-color);">
+              </font-awesome-icon>
+
             </span>
             <span v-else>
-              <img class="theme" src="./assets/suncloud.png">
+              <!-- <img class="theme" src="./assets/suncloud.png"> -->
+              <font-awesome-icon
+                icon="moon"
+                size="2x"
+                fixed-width
+                style="color: var(--dynamic-subtitle-color);">
+              </font-awesome-icon>
             </span>
           </label>
         </section>
       <section class="main-title">
         <div class="header-top">
           <div class="container">
-            <h1 class="title dynamic-title">
+            <h3 class="title dynamic-title">
               <span v-if="darkMode === true"></span>
               <span v-else></span>
-            </h1>
-            <h2 class="subtitle dynamic-subtitle">
+            </h3>
+            <h3 class="title dynamic-title">
               Home IoT Dashboard
-            </h2>
+            </h3>
           </div>
         </div>
       </section>
-      <section>
-        <Button label="ClickHere"></Button>
-      </section>
-      <section>
-        <estimatedCosts></estimatedCosts>
-      </section>
-      <section>
-        <div class="trendLineContainer">
-          <trendLine></trendLine>
-        </div>
-      </section>
+      <!-- <section>
+         <Button label="ClickHere"></Button>
+      </section> -->
+      <sectionrow class="rowcontainer">
+        <section>
+          <estimatedCosts class="rowitem"></estimatedCosts>
+        </section>
+        <section>
+          <div class="trendLineContainer">
+            <trendLine class="rowitem"></trendLine>
+          </div>
+        </section>
+    </sectionrow>
     </div>
   </div>
 </div>
@@ -50,7 +65,7 @@
 
 <script>
 // primeVUE compoenets
-import Button from "primevue/button";
+// import Button from "primevue/button";
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
 
@@ -58,7 +73,7 @@ import estimatedCosts from "./components/estimatedCosts";
 export default {
   name: "app",
   components: {
-    Button,
+    // Button,
     trendLine,
     estimatedCosts
   },
@@ -112,6 +127,7 @@ export default {
 }
 .wrapper{
   display: flex;
+  justify-content: center;
   align-content: center;
 }
 .dashboardpage{
@@ -126,6 +142,13 @@ export default {
 .themecontainer{
   display: flex;
   justify-content: flex-end;
+}
+.rowcontainer{
+  display: flex;
+  flex-direction: row;
+}
+.rowitem{
+  margin: 20px;
 }
 @media (max-width: 770px) {
   .dashboardpage{

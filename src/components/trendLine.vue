@@ -1,6 +1,7 @@
 <template>
   <section>
     <div class="chartContainer">
+      <h3 class="subtitle dynamic-subtitle">Device Usage Trends</h3>
       <Chart type="line" :data="basicData" />
     <!-- <Chart type="line" :data="data" :options="options" /> -->
     </div>
