@@ -60,4 +60,16 @@ export default {
 .chartContainer{
   width: 600px;
 }
+@media (max-width: 415px) {
+  .chartContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 770px) {
+  .chartContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 </style>

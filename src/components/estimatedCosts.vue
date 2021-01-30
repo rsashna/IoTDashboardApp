@@ -23,9 +23,7 @@
   width: 200px;
   height: 300px;
   margin-top: 20px;
-  // background-color: #444444;
   border-style: solid;
-  // border-color: cyan;
   border-width: medium;
   border-radius: 5px;
 }
@@ -57,5 +55,15 @@
   font-size: 30px;
   text-align: center;
   text-decoration-style: solid;
+}
+@media (max-width: 415px) {
+  .costContainer{
+    padding: 50px, 50px, 0px, 0px;
+  }
+}
+@media (max-width: 770px) {
+  .costContainer{
+    padding: 50px, 50px, 0px, 0px;
+  }
 }
 </style>

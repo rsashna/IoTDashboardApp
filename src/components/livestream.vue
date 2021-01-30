@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="wrapper" >
-    <h3 class="subtitle dynamic-subtitle"> View livestream of Door </h3>
+    <h3 class="window"> View livestream of Door </h3>
   </div>
 <!-- closing the header tag -->
   </div>
@@ -20,8 +20,9 @@ export default {
 
 <style lang="scss" scoped>
 
-.dynamic-subtitle{
+.window{
   padding-bottom: 30px;
+  color: #b9f9fa;
 }
 
 .wrapper{
@@ -30,12 +31,12 @@ export default {
   justify-content: space-evenly;
 }
 .container{
-align-items: center;
+  padding: 30px;
+  align-items: center;
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  width: 300px;
-  height:250px;
+  height: 230px;
   background-color: #2c3e50;
 }
 

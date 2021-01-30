@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="appwrapper">
     <div id="app">
     <div class="dashboardpage">
         <section class="themecontainer">
@@ -12,7 +12,6 @@
           />
           <label for="theme-switch">
             <span v-if="darkMode === true">
-              <!-- <img class="theme" src="./assets/suncloud.png"> -->
               <font-awesome-icon
                 icon="sun"
                 size="2x"
@@ -21,7 +20,6 @@
               </font-awesome-icon>
             </span>
             <span v-else>
-              <!-- <img class="theme" src="./assets/suncloud.png"> -->
               <font-awesome-icon
                 icon="moon"
                 size="2x"
@@ -47,24 +45,25 @@
       <!-- <section>
          <Button label="ClickHere"></Button>
       </section> -->
-      <section class= "rowContainer">
-      <section>
-        <statusofdevices class="item"> </statusofdevices>
-      </section>
-      <section>
-        <livestream class="item"> </livestream>
-      </section>
-      </section>
-      <sectionrow class="rowcontainer">
-        <section>
-          <estimatedCosts class="rowitem"></estimatedCosts>
+        <section class= "rowContainer">
+          <section>
+            <statusofdevices class="item"> </statusofdevices>
+          </section>
+          <section>
+            <livestream class="item"> </livestream>
+          </section>
         </section>
-        <section>
-          <div class="trendLineContainer">
-            <trendLine class="rowitem"></trendLine>
-          </div>
-        </section>
-    </sectionrow>
+        <section class="rowcontainer">
+          <section>
+            <estimatedCosts class="item"></estimatedCosts>
+          </section>
+          <section>
+            <div class="trendLineContainer">
+              <trendLine class="item"></trendLine>
+            </div>
+          </section>
+          <section></section>
+      </section>
     </div>
   </div>
 </div>
@@ -140,23 +139,21 @@ display: flex;
 flex-direction: row;
 margin: 50px;
 }
-.wrapper{
+.appwrapper{
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-wrap: wrap;
 }
 .dashboardpage{
   display: block;
   justify-content: center;
-  width: 1000px;
+  width: 900px;
 }
 
 .item{
   margin: 10px;
-}
-.theme{
-  padding: 10px;
-  width:50px;
 }
 .themecontainer{
   display: flex;
@@ -166,21 +163,25 @@ margin: 50px;
   display: flex;
   flex-direction: row;
 }
-.rowitem{
-  margin: 20px;
-}
 @media (max-width: 770px) {
+  .rowContainer{
+    display: flex;
+    flex-direction: column;
+  }
   .dashboardpage{
     display: block;
-    justify-content: center;
+    justify-content: space-around;
     width: 750px;
   }
 }
 @media (max-width: 415px) {
+  .rowContainer{
+    display: flex;
+    flex-direction: column;
+  }
   .dashboardpage{
     display: block;
-    justify-content: center;
-    width: 360px;
+    justify-content: space-around;
   }
 }
 </style>

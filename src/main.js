@@ -9,12 +9,18 @@ import Chart from "primevue/chart";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCloudSun, faSun, faMoon} from "@fortawesome/free-solid-svg-icons";
+import { faCloudSun, faSun, faMoon, faFan, faDoorOpen, faLightbulb, faAd}
+  from "@fortawesome/free-solid-svg-icons";
 
 // Vue.component("font-awesome-icon", FontAwesomeIcon)
 library.add(faCloudSun);
 library.add(faSun);
 library.add(faMoon);
+library.add(faFan);
+library.add(faAd);
+library.add(faDoorOpen);
+library.add(faLightbulb);
+
 
 // custom styles
 import "./assets/css/styles.scss";
