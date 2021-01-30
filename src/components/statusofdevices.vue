@@ -76,6 +76,8 @@ export default {
   border-style: solid;
   border-width: medium;
   border-radius: 5px;
+  padding-bottom: 30px;
+  padding-top: 10px;
 }
 .image{
   width:40px;

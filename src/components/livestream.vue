@@ -36,7 +36,7 @@ export default {
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  height: 230px;
+  height: 220px;
   background-color: #2c3e50;
 }
 

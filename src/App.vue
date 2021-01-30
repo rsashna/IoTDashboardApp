@@ -127,17 +127,13 @@ export default {
 
 <style lang="scss">
 #app {
+  display: flex;
+  justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-.rowContainer{
-display: flex;
-flex-direction: row;
-margin: 50px;
 }
 .appwrapper{
   padding: 15px;
@@ -145,11 +141,15 @@ margin: 50px;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 900px;
+}
+.rowContainer{
+display: flex;
+flex-direction: row;
 }
 .dashboardpage{
   display: block;
   justify-content: center;
-  width: 900px;
 }
 
 .item{
