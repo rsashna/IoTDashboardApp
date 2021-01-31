@@ -1,13 +1,23 @@
 <template>
-  <section class="subtitle dynamic-subtitle">
+  <section class="dynamic-subtitle">
     <div class="costContainer">
-      <div class="costTitle">Estimated Costs</div>
-      <div class="costLabel">Weekly</div>
-      <div class="costCalc">$ 320</div>
-      <div class="costLabel">Monthly</div>
-      <div class="costCalc">$ 820</div>
-      <div class="costLabel">Yearly</div>
-      <div class="costCalc">$ 13,720</div>
+      <div class="title">
+        <div class="costTitle">Estimated Costs</div>
+      </div>
+      <div class="pairContainer">
+        <div class="infoPair">
+          <div class="costLabel">Weekly</div>
+          <div class="costCalc">$ 320</div>
+        </div>
+        <div class="infoPair">
+          <div class="costLabel">Monthly</div>
+          <div class="costCalc">$ 820</div>
+        </div>
+        <div class="infoPair">
+          <div class="costLabel">Yearly</div>
+          <div class="costCalc">$ 13,720</div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -55,15 +65,62 @@
   font-size: 30px;
   text-align: center;
   text-decoration-style: solid;
+  white-space: nowrap;
 }
 @media (max-width: 415px) {
+  .costTitle{
+  align-self: center;
+  }
   .costContainer{
-    padding: 50px, 50px, 0px, 0px;
+    margin-top: 5px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    justify-content: space-evenly;
+  }
+  .title{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+  }
+  .pairContainer{
+    display: flex;
+    flex-direction: row;
+  }
+   .infoPair{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
   }
 }
 @media (max-width: 770px) {
   .costContainer{
-    padding: 50px, 50px, 0px, 0px;
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    justify-content: center;
+  }
+  .title{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+  }
+  .pairContainer{
+    display: flex;
+    flex-direction: row;
+  }
+   .infoPair{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
   }
 }
 </style>

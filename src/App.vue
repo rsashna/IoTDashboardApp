@@ -46,24 +46,16 @@
          <Button label="ClickHere"></Button>
       </section> -->
         <section class= "rowContainer">
-          <section>
             <statusofdevices class="item"> </statusofdevices>
-          </section>
-          <section>
             <livestream class="item"> </livestream>
           </section>
-        </section>
-        <section class="rowcontainer">
-          <section>
+        <section class="rowContainer">
             <estimatedCosts class="item"></estimatedCosts>
-          </section>
-          <section>
-            <div class="trendLineContainer">
-              <trendLine class="item"></trendLine>
-            </div>
-          </section>
-          <section></section>
-      </section>
+              <div class="trendlineContainer">
+                <trendLine class="item"></trendLine>
+              </div>
+        </section>
+        <section></section>
     </div>
   </div>
 </div>
@@ -164,6 +156,9 @@ flex-direction: row;
   flex-direction: row;
 }
 @media (max-width: 770px) {
+  #app{
+  padding: 5px;
+}
   .rowContainer{
     display: flex;
     flex-direction: column;
@@ -173,15 +168,24 @@ flex-direction: row;
     justify-content: space-around;
     width: 750px;
   }
+  .trendlineContainer{
+    align-self: center;
+  }
 }
 @media (max-width: 415px) {
+  #app{
+  padding: 5px;
+}
   .rowContainer{
     display: flex;
     flex-direction: column;
   }
   .dashboardpage{
     display: block;
-    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+  .trendlineContainer{
+    align-self: center;
   }
 }
 </style>
