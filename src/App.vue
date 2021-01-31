@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="appwrapper">
     <div id="app">
     <div class="dashboardpage">
         <section class="themecontainer">
@@ -12,17 +12,14 @@
           />
           <label for="theme-switch">
             <span v-if="darkMode === true">
-              <!-- <img class="theme" src="./assets/suncloud.png"> -->
               <font-awesome-icon
                 icon="sun"
                 size="2x"
                 fixed-width
                 style="color: var(--dynamic-subtitle-color);">
               </font-awesome-icon>
-
             </span>
             <span v-else>
-              <!-- <img class="theme" src="./assets/suncloud.png"> -->
               <font-awesome-icon
                 icon="moon"
                 size="2x"
@@ -48,16 +45,17 @@
       <!-- <section>
          <Button label="ClickHere"></Button>
       </section> -->
-      <sectionrow class="rowcontainer">
-        <section>
-          <estimatedCosts class="rowitem"></estimatedCosts>
+        <section class= "rowContainer">
+            <statusofdevices class="item"> </statusofdevices>
+            <livestream class="item"> </livestream>
+          </section>
+        <section class="rowContainer">
+            <estimatedCosts class="item"></estimatedCosts>
+              <div class="trendlineContainer">
+                <trendLine class="item"></trendLine>
+              </div>
         </section>
-        <section>
-          <div class="trendLineContainer">
-            <trendLine class="rowitem"></trendLine>
-          </div>
-        </section>
-    </sectionrow>
+        <section></section>
     </div>
   </div>
 </div>
@@ -68,12 +66,14 @@
 // import Button from "primevue/button";
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
-
-
+import statusofdevices from "./components/statusofdevices";
+import livestream from "./components/livestream";
 export default {
   name: "app",
   components: {
     // Button,
+    statusofdevices,
+    livestream,
     trendLine,
     estimatedCosts
   },
@@ -119,25 +119,33 @@ export default {
 
 <style lang="scss">
 #app {
+  display: flex;
+  justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-.wrapper{
+.appwrapper{
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-wrap: wrap;
+  width: 900px;
+}
+.rowContainer{
+display: flex;
+flex-direction: row;
 }
 .dashboardpage{
   display: block;
   justify-content: center;
-  width: 1000px;
 }
-.theme{
-  padding: 10px;
-  width:50px;
+
+.item{
+  margin: 10px;
 }
 .themecontainer{
   display: flex;
@@ -147,21 +155,37 @@ export default {
   display: flex;
   flex-direction: row;
 }
-.rowitem{
-  margin: 20px;
-}
 @media (max-width: 770px) {
+  #app{
+  padding: 5px;
+}
+  .rowContainer{
+    display: flex;
+    flex-direction: column;
+  }
   .dashboardpage{
     display: block;
-    justify-content: center;
+    justify-content: space-around;
     width: 750px;
+  }
+  .trendlineContainer{
+    align-self: center;
   }
 }
 @media (max-width: 415px) {
+  #app{
+  padding: 5px;
+}
+  .rowContainer{
+    display: flex;
+    flex-direction: column;
+  }
   .dashboardpage{
     display: block;
-    justify-content: center;
-    width: 360px;
+    justify-content: space-evenly;
+  }
+  .trendlineContainer{
+    align-self: center;
   }
 }
 </style>
