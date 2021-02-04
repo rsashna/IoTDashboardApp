@@ -55,7 +55,9 @@
                 <trendLine class="item"></trendLine>
               </div>
         </section>
-        <section></section>
+        <section class= "rowContainer">
+          <deviceSummary class="item"></deviceSummary>
+        </section>
     </div>
   </div>
 </div>
@@ -68,6 +70,8 @@ import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
 import statusofdevices from "./components/statusofdevices";
 import livestream from "./components/livestream";
+import deviceSummary from "./components/deviceSummary";
+
 export default {
   name: "app",
   components: {
@@ -75,7 +79,8 @@ export default {
     statusofdevices,
     livestream,
     trendLine,
-    estimatedCosts
+    estimatedCosts,
+    deviceSummary
   },
   data() {
     return {
