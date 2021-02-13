@@ -2,20 +2,20 @@
   <section class="dynamic-subtitle">
     <div class="costContainer">
       <div class="title">
-        <div class="costTitle">Estimated Costs</div>
+        <h3 class="costTitle">Estimated Costs</h3>
       </div>
       <div class="pairContainer">
         <div class="infoPair">
-          <div class="costLabel">Weekly</div>
+          <h3 class="costLabel">Weekly</h3>
           <div class="costCalc">$ 320</div>
         </div>
         <div class="infoPair">
-          <div class="costLabel">Monthly</div>
-          <div class="costCalc">$ 820</div>
+          <h3 class="costLabel">Monthly</h3>
+          <h3 class="costCalc">$ 820</h3>
         </div>
         <div class="infoPair">
-          <div class="costLabel">Yearly</div>
-          <div class="costCalc">$ 13,720</div>
+            <h3 class="costLabel">Yearly</h3>
+            <h3 class="costCalc">$ 13,720</h3>
         </div>
       </div>
     </div>
