@@ -19,14 +19,10 @@ it("Test: Status of devices prompt text should be visible", () => {
 //ON and OFF, should i duplicate that, since we have each of the two?
 //also what about the
 it("Test: ON should be visible", () => {
-  // expect(component.find().exists()).to.be.true;
-  expect(component.text()).to.have.string('ON');
+  // expect(component.find().exists()).to.be.true; NOT WORKING: .find({statusText: statusDoor})
+  expect(component.text()).to.contain.any.string('ON','OFF');
 });
 
-it("Test: OFF should be visible", () => {
-  // expect(component.find().exists()).to.be.true;
-  expect(component.text()).to.have.string('OFF');
-});
 
 
 });

@@ -7,15 +7,15 @@
       <div class="pairContainer">
         <div class="infoPair">
           <div class="costLabel">Weekly</div>
-          <div class="costCalc">$ 320</div>
+          <div class="costCalc">$ {{weeklyval}}</div>
         </div>
         <div class="infoPair">
           <div class="costLabel">Monthly</div>
-          <div class="costCalc">$ 820</div>
+          <div class="costCalc">$ {{monthlyval}}</div>
         </div>
         <div class="infoPair">
             <div class="costLabel">Yearly</div>
-            <div class="costCalc">$ 13,720</div>
+            <div class="costCalc">$ {{yearlyval}}</div>
         </div>
       </div>
     </div>
@@ -23,6 +23,17 @@
 </template>
 
 <script>
+export default {
+  data(){
+return{
+  weeklyval: 320,
+  monthlyval: 820,
+  yearlyval: 13720,
+}
+  },
+  methods:{
+  }
+}
 </script>
 
 <style lang="scss">

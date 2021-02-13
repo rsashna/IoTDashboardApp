@@ -44,7 +44,7 @@ describe("estimatedCosts.vue", () => {
 
   it("Test: $ 13,720 should be visible", () => {
     // expect(component.find().exists()).to.be.true;
-    expect(component.text()).to.have.string('$ 13,720');
+    expect(component.text()).to.contain.string('13720');
   });
 
 
