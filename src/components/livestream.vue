@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="wrapper" >
-    <h3 class="window"> View livestream of Door </h3>
+    <h3 class="window" v-if="show" > View Livestream of Door </h3>
   </div>
 <!-- closing the header tag -->
   </div>
@@ -11,6 +11,7 @@
 export default {
   data(){
     return{
+      show:true
     }
   },
   methods:{

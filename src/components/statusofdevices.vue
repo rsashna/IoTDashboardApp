@@ -11,7 +11,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> ON </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusDoor}} </h3>
       </div>
       <div class ="icon" >
           <font-awesome-icon
@@ -20,11 +20,11 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-        <h3 class="subtitle dynamic-subtitle"> OFF </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3>
       </div>
       <div class ="icon" >
         <img class="image" src="./../assets/gimpfridgeTeal.png">
-        <h3 class="subtitle dynamic-subtitle"> ON </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3>
       </div>
       <div class ="icon" >
           <font-awesome-icon
@@ -33,7 +33,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> OFF </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusLightBulb}} </h3>
       </div>
     </div>
   </div>
@@ -43,6 +43,12 @@
 export default {
   data(){
     return{
+      statusText:{
+            statusDoor: 'ON',
+            statusFan: 'ON',
+            statusFridge: 'ON',
+            statusLightBulb: 'ON',
+      }
     }
   },
 
