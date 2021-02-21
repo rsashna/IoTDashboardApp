@@ -5,6 +5,9 @@
       <Chart v-if="time === 'yearly'" type="line" :data="basicDataYearly" />
       <Chart v-if="time === 'monthly'" type="line" :data="basicDataMonthly" />
       <Chart v-if="time === 'weekly'" type="line" :data="basicDataWeekly" />
+      <Button class="timerbutton" v-on:click="time='weekly'">Weekly Trend</Button>
+      <Button class="timerbutton" v-on:click="time='monthly'">Monthly Trend</Button>
+      <Button class="timerbutton" v-on:click="time='yearly'">Yearly Trend</Button>
     <!-- <Chart type="line" :data="data" :options="options" /> -->
     </div>
   </section>
@@ -58,7 +61,7 @@ export default {
 						data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56]
 					},
           {
-						label: 'Sample Yearly Usage',
+						label: 'Sample Previous Yearly Usage',
 						backgroundColor: '#87c3f5',
 						data: [40, 65, 59, 80, 81, 56, 65, 59, 80, 81, 56, 55]
 					}
@@ -94,6 +97,12 @@ export default {
 <style lang="scss">
 .chartContainer{
   width: 600px;
+}
+.timerbutton{
+margin: 5px;
+background-color: #b9f9fa;
+border-radius: 2px;
+border-color: #d7fcf9;
 }
 @media (max-width: 415px){
   .chartContainer{
