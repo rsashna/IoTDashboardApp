@@ -2,6 +2,9 @@
   <div class="appwrapper">
     <div id="app">
     <div class="dashboardpage">
+    <section>
+      <notification></notification>
+    </section>
         <section class="themecontainer">
           <!-- theme switcher -->
           <input
@@ -68,6 +71,7 @@ import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
 import statusofdevices from "./components/statusofdevices";
 import livestream from "./components/livestream";
+import notification from "./components/notification";
 export default {
   name: "app",
   components: {
@@ -75,7 +79,8 @@ export default {
     statusofdevices,
     livestream,
     trendLine,
-    estimatedCosts
+    estimatedCosts,
+    notification
   },
   data() {
     return {
