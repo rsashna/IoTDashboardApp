@@ -45,20 +45,19 @@
           </div>
         </div>
       </section>
-      <!-- <section>
-         <Button label="ClickHere"></Button>
-      </section> -->
         <section class= "rowContainer">
-            <statusofdevices class="item"> </statusofdevices>
-            <livestream class="item"> </livestream>
-          </section>
+          <statusofdevices class="item"> </statusofdevices>
+          <livestream class="item"> </livestream>
+        </section>
         <section class="rowContainer">
             <estimatedCosts class="item"></estimatedCosts>
               <div class="trendlineContainer">
                 <trendLine class="item"></trendLine>
               </div>
         </section>
-        <section></section>
+        <section>
+          <accordion></accordion>
+        </section>
     </div>
   </div>
 </div>
@@ -66,12 +65,12 @@
 
 <script>
 // primeVUE compoenets
-// import Button from "primevue/button";
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
 import statusofdevices from "./components/statusofdevices";
 import livestream from "./components/livestream";
 import notification from "./components/notification";
+import accordion from "./components/accordion";
 export default {
   name: "app",
   components: {
@@ -80,7 +79,8 @@ export default {
     livestream,
     trendLine,
     estimatedCosts,
-    notification
+    notification,
+    accordion
   },
   data() {
     return {
