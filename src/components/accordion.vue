@@ -6,32 +6,20 @@
       <label for="ac-4">Door</label>
       <article>
       <div class="wrapper" >
-        <!-- <div class ="icon" >
-            <font-awesome-icon
-              icon="door-open"
-              size="2x"
-              fixed-width
-              style="color: var(dynamic-icon-color);">
-            </font-awesome-icon>
-            <! <h3 class="subtitle dynamic-subtitle"> Door </h3> ->
-        </div> -->
       </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
-        <div>
           <div class ="icon" >
               <font-awesome-icon
                 icon="door-open"
-                size="2x"
+                size="4x"
                 fixed-width
                 style="color: var(--dynamic-icon-color);">
               </font-awesome-icon>
-              <!-- <h3 class="subtitle dynamic-subtitle"> Door </h3> -->
           </div>
-        </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
           <h3 class="dataPoint">$300 </h3>
@@ -44,19 +32,20 @@
       <label for="ac-2">Air Conditioner</label>
       <article>
         <div class="wrapper" >
-        <div class ="icon" >
-            <font-awesome-icon
-              icon="fan"
-              size="2x"
-              fixed-width
-              style="color: var(--dynamic-icon-color);">
-            </font-awesome-icon>
-            <!-- <h3 class="subtitle dynamic-subtitle"> Air Conditioner </h3> -->
-        </div> </div>
+
+      </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+      </div>
+      <div class ="icon" >
+          <font-awesome-icon
+            icon="fan"
+            size="4x"
+            fixed-width
+            style="color: var(--dynamic-icon-color);">
+          </font-awesome-icon>
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated cost of appliance:</h3>
@@ -70,14 +59,14 @@
       <label for="ac-3">Smart Fridge</label>
       <article>
         <div class="wrapper" >
-        <div class ="icon" >
-            <img class="image" src="./../assets/gimpfridgeTeal.png" style="width:40px">
-            <!-- <h3 class="subtitle dynamic-subtitle"> Smart Fridge </h3> -->
-        </div> </div>
+      </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+      </div>
+      <div class ="icon" >
+          <img class="image" src="./../assets/gimpfridgeTeal.png" style="width:75px">
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated cost of appliance:</h3>
@@ -91,19 +80,19 @@
       <label for="ac-1">Smart Bulb</label>
       <article>
         <div class="wrapper" >
-        <div class ="icon" >
-            <font-awesome-icon
-              icon="lightbulb"
-              size="2x"
-              fixed-width
-              style="color: var(--dynamic-icon-color);">
-            </font-awesome-icon>
-            <!-- <h3 class="subtitle dynamic-subtitle"> Smart Bulb </h3> -->
-        </div> </div>
+         </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+      </div>
+      <div class ="icon" >
+          <font-awesome-icon
+            icon="lightbulb"
+            size="4x"
+            fixed-width
+            style="color: var(--dynamic-icon-color);">
+          </font-awesome-icon>
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated cost of appliance:</h3>
@@ -165,11 +154,13 @@
     line-height: 1.5;
   }
   .ac-container input:checked ~ article {
-   height: 300px;
+   height: 220px;
     border-top: 2px solid var(--dynamic-icon-color);
   }
   .infoPair{
    display: flex;
+   align-items: center;
+   justify-content: space-evenly;
    // align-items: baseline;
    flex-direction: column;
    width: 200px;
@@ -177,11 +168,13 @@
   }
   .wrapper{
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-evenly;
   }
   .icon{
-    margin: 20px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
     .dynamic-subtitle{
       padding-top: 0px;
       margin: 20px;
@@ -192,7 +185,7 @@
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
     text-decoration-style: solid;
     color: var(--dynamic-subtitle-color);
