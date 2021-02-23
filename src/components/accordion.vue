@@ -6,24 +6,35 @@
       <label for="ac-4">Door</label>
       <article>
       <div class="wrapper" >
-        <div class ="icon" >
+        <!-- <div class ="icon" >
             <font-awesome-icon
               icon="door-open"
               size="2x"
               fixed-width
-              style="color: var(--dynamic-icon-color);">
+              style="color: var(dynamic-icon-color);">
             </font-awesome-icon>
-            <h3 class="subtitle dynamic-subtitle"> Door </h3>
-        </div>
+            <! <h3 class="subtitle dynamic-subtitle"> Door </h3> ->
+        </div> -->
       </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="costLabel">Peak hours used:</h3>
-          <h3 class="costCalc">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Peak hours used:</h3>
+          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
+        <div>
+          <div class ="icon" >
+              <font-awesome-icon
+                icon="door-open"
+                size="2x"
+                fixed-width
+                style="color: var(--dynamic-icon-color);">
+              </font-awesome-icon>
+              <!-- <h3 class="subtitle dynamic-subtitle"> Door </h3> -->
+          </div>
+        </div>
       <div class="infoPair">
-          <h3 class="costLabel">Estimated cost of appliance:</h3>
-          <h3 class="costCalc">$300 </h3>
+          <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
+          <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
       </article>
@@ -40,16 +51,16 @@
               fixed-width
               style="color: var(--dynamic-icon-color);">
             </font-awesome-icon>
-            <h3 class="subtitle dynamic-subtitle"> Air Conditioner </h3>
+            <!-- <h3 class="subtitle dynamic-subtitle"> Air Conditioner </h3> -->
         </div> </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="costLabel">Peak hours used:</h3>
-          <h3 class="costCalc">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Peak hours used:</h3>
+          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
       <div class="infoPair">
-          <h3 class="costLabel">Estimated cost of appliance:</h3>
-          <h3 class="costCalc">$300 </h3>
+          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
       </article>
@@ -61,16 +72,16 @@
         <div class="wrapper" >
         <div class ="icon" >
             <img class="image" src="./../assets/gimpfridgeTeal.png" style="width:40px">
-            <h3 class="subtitle dynamic-subtitle"> Smart Fridge </h3>
+            <!-- <h3 class="subtitle dynamic-subtitle"> Smart Fridge </h3> -->
         </div> </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="costLabel">Peak hours used:</h3>
-          <h3 class="costCalc">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Peak hours used:</h3>
+          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
       <div class="infoPair">
-          <h3 class="costLabel">Estimated cost of appliance:</h3>
-          <h3 class="costCalc">$300 </h3>
+          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
       </article>
@@ -87,16 +98,16 @@
               fixed-width
               style="color: var(--dynamic-icon-color);">
             </font-awesome-icon>
-            <h3 class="subtitle dynamic-subtitle"> Smart Bulb </h3>
+            <!-- <h3 class="subtitle dynamic-subtitle"> Smart Bulb </h3> -->
         </div> </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="costLabel">Peak hours used:</h3>
-          <h3 class="costCalc">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Peak hours used:</h3>
+          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
       <div class="infoPair">
-          <h3 class="costLabel">Estimated cost of appliance:</h3>
-          <h3 class="costCalc">$300 </h3>
+          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
       </article>
@@ -110,8 +121,8 @@
 .accordianContainer{
   .ac-container {
     max-width: 95%;
-    border: 2px solid var(--dynamic-icon-color);
-    border-top: none;
+    border: 2px solid var(--dynamic-subtitle-color);
+    // border-top: none;
   }
   .ac-container label {
     height: 30px;
@@ -120,16 +131,23 @@
     padding: 5px 20px;
     display: block;
     cursor: pointer;
-    color: #666;
-    background: var(--dynamic-subtitle-color);
-    border-top: 1px solid var(--dynamic-icon-color);
+    color: #b9f9fa;
+    // background-color: #2c3e50;
+    background: #2c3e50;
+    // border-top: 1px #b9f9fa;
+    // border-bottom: 1px #b9f9fa;
+    .container{
+    // border: #fff;
+    // border-width: thick;
+    }
   }
   .ac-container {
     width: 100%;
     margin: 10px auto;
+    border-radius: 5px;
   }
   .ac-container label:hover {
-    background: #ddd;
+    background: #3a4f63;
   }
   .ac-container input {
     display: none;
@@ -148,10 +166,11 @@
   }
   .ac-container input:checked ~ article {
    height: 300px;
-    border-top: 1px solid var(--dynamic-icon-color);
+    border-top: 2px solid var(--dynamic-icon-color);
   }
   .infoPair{
    display: flex;
+   // align-items: baseline;
    flex-direction: column;
    width: 200px;
    height: 200px;
@@ -167,6 +186,27 @@
       padding-top: 0px;
       margin: 20px;
     }
+  }
+  .dataPoint{
+    padding: 4px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    text-decoration-style: solid;
+    color: var(--dynamic-subtitle-color);
+  }
+  .dataLabel{
+    padding: 4px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    text-decoration-style: solid;
+    color: var(--dynamic-subtitle-color);
+    // white-space: nowrap;
   }
 }
 </style>
