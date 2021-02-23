@@ -15,7 +15,8 @@ return{
   },
   methods:{  }
 }
-</script><style lang="scss" scoped>
+</script>
+<style lang="scss" scoped>
 .wrapper{
   display: flex;
   width: 100%;

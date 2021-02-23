@@ -5,7 +5,8 @@
   </div>
 <!-- closing the header tag -->
   </div>
-</template><script>
+</template>
+<script>
 export default {
   data(){
     return{
@@ -15,10 +16,12 @@ export default {
   methods:{
   }
 }
-</script><style lang="scss" scoped>.window{
+</script>
+<style lang="scss" scoped>.window{
   padding-bottom: 30px;
   color: #b9f9fa;
-}.wrapper{
+}
+.wrapper{
   align-items: center;
   display: flex;
   justify-content: space-evenly;

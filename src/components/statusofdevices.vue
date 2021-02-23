@@ -2,7 +2,7 @@
 <div class="subtitle dynamic-subtitle status">
   <div class="wrapper" >
     <h3 class="subtitle dynamic-subtitle"> Status of Devices </h3>
-</div>
+  </div>
     <div class="wrapper" >
       <div class ="icon" >
           <font-awesome-icon
@@ -37,7 +37,8 @@
       </div>
     </div>
   </div>
-</template><script>
+</template>
+<script>
 export default {
   data(){
     return{
@@ -51,9 +52,11 @@ export default {
   },  methods:{
   },
 }
-</script><style lang="scss" scoped>.dynamic-subtitle{
+</script>
+<style lang="scss" scoped>.dynamic-subtitle{
   padding-bottom: 30px;
-}.icon{
+}
+.icon{
   .dynamic-subtitle{
     padding-top: 0px;
     margin: 50px;

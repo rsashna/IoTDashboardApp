@@ -11,7 +11,8 @@
     <!-- <Chart type="line" :data="data" :options="options" /> -->
     </div>
   </section>
-</template><script>
+</template>
+<script>
 import Chart from 'primevue/chart';export default {
 	data() {
 		return {
@@ -86,7 +87,8 @@ import Chart from 'primevue/chart';export default {
 		}
 	}
 }
-</script><style lang="scss">
+</script>
+<style lang="scss">
 .chartContainer{
   width: 600px;
 }

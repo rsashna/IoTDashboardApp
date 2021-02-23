@@ -32,7 +32,8 @@ return{
   methods:{
   }
 }
-</script><style lang="scss">
+</script>
+<style lang="scss">
 .costContainer{
   display: flex;
   flex-direction: column;

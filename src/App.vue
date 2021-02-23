@@ -3,7 +3,8 @@
     <div id="app">
     <div class="dashboardpage">
     <section>
-      <notification></notification>
+      <notification>
+      </notification>
     </section>
         <section class="themecontainer">
           <!-- theme switcher -->
@@ -36,8 +37,10 @@
         <div class="header-top">
           <div class="container">
             <h3 class="title dynamic-title">
-              <span v-if="darkMode === true"></span>
-              <span v-else></span>
+              <span v-if="darkMode === true">
+              </span>
+              <span v-else>
+              </span>
             </h3>
             <h3 class="title dynamic-title">
               Home IoT Dashboard
@@ -50,18 +53,22 @@
           <livestream class="item"> </livestream>
         </section>
         <section class="rowContainer">
-            <estimatedCosts class="item"></estimatedCosts>
+            <estimatedCosts class="item">
+            </estimatedCosts>
               <div class="trendlineContainer">
-                <trendLine class="item"></trendLine>
+                <trendLine class="item">
+                </trendLine>
               </div>
         </section>
         <section>
-          <accordion></accordion>
+          <accordion>
+          </accordion>
         </section>
     </div>
   </div>
 </div>
-</template><script>
+</template>
+<script>
 // primeVUE compoenets
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
@@ -110,7 +117,8 @@ export default {
     }
   }
 };
-</script><style lang="scss">
+</script>
+<style lang="scss">
 #app {
   display: flex;
   justify-content: center;
@@ -135,7 +143,8 @@ flex-direction: row;
 .dashboardpage{
   display: block;
   justify-content: center;
-}.item{
+}
+.item{
   margin: 10px;
 }
 .themecontainer{
