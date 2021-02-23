@@ -31,9 +31,7 @@
       <input id="ac-2" name="accordion-1" type="radio" checked>
       <label for="ac-2">Air Conditioner</label>
       <article>
-        <div class="wrapper" >
-
-      </div>
+        <div class="wrapper" >      </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
@@ -110,9 +108,7 @@
 .accordianContainer{
   .ac-container {
     max-width: 95%;
-    border: 2px solid var(--dynamic-subtitle-color);
-    // border-top: none;
-  }
+    border: 2px solid var(--dynamic-subtitle-color);  }
   .ac-container label {
     height: 30px;
     line-height: 1.8;
@@ -120,15 +116,7 @@
     padding: 5px 20px;
     display: block;
     cursor: pointer;
-    color: #b9f9fa;
-    // background-color: #2c3e50;
-    background: #2c3e50;
-    // border-top: 1px #b9f9fa;
-    // border-bottom: 1px #b9f9fa;
-    .container{
-    // border: #fff;
-    // border-width: thick;
-    }
+    color: #b9f9fa;    background: #2c3e50;    .container{    }
   }
   .ac-container {
     width: 100%;
@@ -160,9 +148,7 @@
   .infoPair{
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
-   // align-items: baseline;
-   flex-direction: column;
+   justify-content: space-evenly;   flex-direction: column;
    width: 200px;
    height: 200px;
   }
@@ -198,8 +184,6 @@
     font-size: 20px;
     text-align: center;
     text-decoration-style: solid;
-    color: var(--dynamic-subtitle-color);
-    // white-space: nowrap;
-  }
+    color: var(--dynamic-subtitle-color);  }
 }
 </style>

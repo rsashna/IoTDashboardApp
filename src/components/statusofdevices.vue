@@ -37,9 +37,7 @@
       </div>
     </div>
   </div>
-</template>
-
-<script>
+</template><script>
 export default {
   data(){
     return{
@@ -50,20 +48,12 @@ export default {
             statusLightBulb: 'ON',
       }
     }
-  },
-
-  methods:{
+  },  methods:{
   },
 }
-</script>
-
-<style lang="scss" scoped>
-
-.dynamic-subtitle{
+</script><style lang="scss" scoped>.dynamic-subtitle{
   padding-bottom: 30px;
-}
-
-.icon{
+}.icon{
   .dynamic-subtitle{
     padding-top: 0px;
     margin: 50px;

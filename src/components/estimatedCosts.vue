@@ -20,9 +20,7 @@
       </div>
     </div>
   </section>
-</template>
-
-<script>
+</template><script>
 export default {
   data(){
 return{
@@ -34,9 +32,7 @@ return{
   methods:{
   }
 }
-</script>
-
-<style lang="scss">
+</script><style lang="scss">
 .costContainer{
   display: flex;
   flex-direction: column;
@@ -57,7 +53,6 @@ return{
   font-size: 20px;
   text-align: center;
   text-decoration-style: solid;
-  // color: cyan;
 }
 .costLabel{
   padding: 8px;
