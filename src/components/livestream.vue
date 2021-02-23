@@ -17,7 +17,8 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>.window{
+<style lang="scss" scoped>
+.window{
   padding-bottom: 30px;
   color: #b9f9fa;
 }

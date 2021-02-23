@@ -31,13 +31,14 @@
       <input id="ac-2" name="accordion-1" type="radio" checked>
       <label for="ac-2">Air Conditioner</label>
       <article>
-        <div class="wrapper" >      </div>
+        <div class="wrapper">
+        </div>
     <div class="wrapper" >
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
       </div>
-      <div class ="icon" >
+      <div class ="icon">
           <font-awesome-icon
             icon="fan"
             size="4x"
@@ -68,7 +69,7 @@
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated cost of appliance:</h3>
-          <h3 class="dataPoint">$300 </h3>
+          <h3 class="dataPoint">$300</h3>
       </div>
     </div>
       </article>
@@ -77,9 +78,9 @@
       <input id="ac-1" name="accordion-1" type="radio" checked>
       <label for="ac-1">Smart Bulb</label>
       <article>
-        <div class="wrapper" >
+        <div class="wrapper">
          </div>
-    <div class="wrapper" >
+    <div class="wrapper">
       <div class="infoPair">
           <h3 class="dataLabel">Peak hours used:</h3>
           <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
@@ -108,7 +109,8 @@
 .accordianContainer{
   .ac-container {
     max-width: 95%;
-    border: 2px solid var(--dynamic-subtitle-color);  }
+    border: 2px solid var(--dynamic-subtitle-color);
+  }
   .ac-container label {
     height: 30px;
     line-height: 1.8;
@@ -116,7 +118,8 @@
     padding: 5px 20px;
     display: block;
     cursor: pointer;
-    color: #b9f9fa;    background: #2c3e50;    .container{    }
+    color: #b9f9fa;
+    background: #2c3e50;
   }
   .ac-container {
     width: 100%;
@@ -148,7 +151,8 @@
   .infoPair{
    display: flex;
    align-items: center;
-   justify-content: space-evenly;   flex-direction: column;
+   justify-content: space-evenly;
+   flex-direction: column;
    width: 200px;
    height: 200px;
   }
@@ -184,6 +188,7 @@
     font-size: 20px;
     text-align: center;
     text-decoration-style: solid;
-    color: var(--dynamic-subtitle-color);  }
+    color: var(--dynamic-subtitle-color);
+  }
 }
 </style>

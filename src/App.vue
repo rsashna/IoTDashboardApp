@@ -49,8 +49,8 @@
         </div>
       </section>
         <section class= "rowContainer">
-          <statusofdevices class="item"> </statusofdevices>
-          <livestream class="item"> </livestream>
+          <statusofdevices class="item"></statusofdevices>
+          <livestream class="item"></livestream>
         </section>
         <section class="rowContainer">
             <estimatedCosts class="item">
@@ -96,7 +96,8 @@ export default {
     let bodyElement = document.body;
     bodyElement.classList.add("app-background");    // check for active theme
     let htmlElement = document.documentElement;
-    let theme = localStorage.getItem("theme");    if (theme === "dark") {
+    let theme = localStorage.getItem("theme");
+    if (theme === "dark") {
       htmlElement.setAttribute("theme", "dark");
       this.darkMode = true;
     } else {
@@ -107,7 +108,8 @@ export default {
   watch: {
     darkMode: function() {
       // add/remove class to/from html tag
-      let htmlElement = document.documentElement;      if (this.darkMode) {
+      let htmlElement = document.documentElement;
+      if (this.darkMode) {
         localStorage.setItem("theme", "dark");
         htmlElement.setAttribute("theme", "dark");
       } else {

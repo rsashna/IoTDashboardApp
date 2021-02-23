@@ -8,10 +8,10 @@
 <script>
 export default {
   data(){
-return{
-  alertMessage: 'Alert: Door is Unlocked!  Check the livestream.',
-  showAlert: true,
-}
+  return{
+    alertMessage: 'Alert: Door is Unlocked!  Check the livestream.',
+    showAlert: true,
+  }
   },
   methods:{  }
 }
@@ -40,4 +40,6 @@ return{
   color: white;
   font-family: "Avenir";
   font-weight: bold;
-  font-style: italic;}</style>
+  font-style: italic;
+}
+</style>

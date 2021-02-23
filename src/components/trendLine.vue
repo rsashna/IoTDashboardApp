@@ -13,7 +13,8 @@
   </section>
 </template>
 <script>
-import Chart from 'primevue/chart';export default {
+import Chart from 'primevue/chart';
+export default {
 	data() {
 		return {
       time: 'weekly',

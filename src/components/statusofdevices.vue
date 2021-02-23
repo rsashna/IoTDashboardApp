@@ -1,10 +1,10 @@
 <template>
 <div class="subtitle dynamic-subtitle status">
-  <div class="wrapper" >
+  <div class="wrapper">
     <h3 class="subtitle dynamic-subtitle"> Status of Devices </h3>
   </div>
-    <div class="wrapper" >
-      <div class ="icon" >
+    <div class="wrapper">
+      <div class ="icon">
           <font-awesome-icon
             icon="door-open"
             size="2x"
@@ -13,7 +13,7 @@
           </font-awesome-icon>
           <h3 class="subtitle dynamic-subtitle"> {{statusText.statusDoor}} </h3>
       </div>
-      <div class ="icon" >
+      <div class ="icon">
           <font-awesome-icon
             icon="fan"
             size="2x"
@@ -22,11 +22,11 @@
           </font-awesome-icon>
         <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3>
       </div>
-      <div class ="icon" >
+      <div class ="icon">
         <img class="image" src="./../assets/gimpfridgeTeal.png">
         <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3>
       </div>
-      <div class ="icon" >
+      <div class ="icon">
           <font-awesome-icon
             icon="lightbulb"
             size="2x"
@@ -53,7 +53,8 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>.dynamic-subtitle{
+<style lang="scss" scoped>
+.dynamic-subtitle{
   padding-bottom: 30px;
 }
 .icon{

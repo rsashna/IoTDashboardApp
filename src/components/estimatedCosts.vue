@@ -20,7 +20,8 @@
       </div>
     </div>
   </section>
-</template><script>
+</template>
+<script>
 export default {
   data(){
 return{
