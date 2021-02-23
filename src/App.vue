@@ -3,7 +3,8 @@
     <div id="app">
     <div class="dashboardpage">
     <section>
-      <notification></notification>
+      <notification>
+      </notification>
     </section>
         <section class="themecontainer">
           <!-- theme switcher -->
@@ -36,8 +37,10 @@
         <div class="header-top">
           <div class="container">
             <h3 class="title dynamic-title">
-              <span v-if="darkMode === true"></span>
-              <span v-else></span>
+              <span v-if="darkMode === true">
+              </span>
+              <span v-else>
+              </span>
             </h3>
             <h3 class="title dynamic-title">
               Home IoT Dashboard
@@ -45,33 +48,34 @@
           </div>
         </div>
       </section>
-      <!-- <section>
-         <Button label="ClickHere"></Button>
-      </section> -->
         <section class= "rowContainer">
-            <statusofdevices class="item"> </statusofdevices>
-            <livestream class="item"> </livestream>
-          </section>
+          <statusofdevices class="item"></statusofdevices>
+          <livestream class="item"></livestream>
+        </section>
         <section class="rowContainer">
-            <estimatedCosts class="item"></estimatedCosts>
+            <estimatedCosts class="item">
+            </estimatedCosts>
               <div class="trendlineContainer">
-                <trendLine class="item"></trendLine>
+                <trendLine class="item">
+                </trendLine>
               </div>
         </section>
-        <section></section>
+        <section>
+          <accordion>
+          </accordion>
+        </section>
     </div>
   </div>
 </div>
 </template>
-
 <script>
 // primeVUE compoenets
-// import Button from "primevue/button";
 import trendLine from "./components/trendLine";
 import estimatedCosts from "./components/estimatedCosts";
 import statusofdevices from "./components/statusofdevices";
 import livestream from "./components/livestream";
 import notification from "./components/notification";
+import accordion from "./components/accordion";
 export default {
   name: "app",
   components: {
@@ -80,23 +84,19 @@ export default {
     livestream,
     trendLine,
     estimatedCosts,
-    notification
+    notification,
+    accordion
   },
   data() {
     return {
       darkMode: false
     };
   },
-  mounted() {
-
-    // set 'app-background' class to body tag
+  mounted() {    // set 'app-background' class to body tag
     let bodyElement = document.body;
-    bodyElement.classList.add("app-background");
-
-    // check for active theme
+    bodyElement.classList.add("app-background");    // check for active theme
     let htmlElement = document.documentElement;
     let theme = localStorage.getItem("theme");
-
     if (theme === "dark") {
       htmlElement.setAttribute("theme", "dark");
       this.darkMode = true;
@@ -109,7 +109,6 @@ export default {
     darkMode: function() {
       // add/remove class to/from html tag
       let htmlElement = document.documentElement;
-
       if (this.darkMode) {
         localStorage.setItem("theme", "dark");
         htmlElement.setAttribute("theme", "dark");
@@ -121,7 +120,6 @@ export default {
   }
 };
 </script>
-
 <style lang="scss">
 #app {
   display: flex;
@@ -148,7 +146,6 @@ flex-direction: row;
   display: block;
   justify-content: center;
 }
-
 .item{
   margin: 10px;
 }

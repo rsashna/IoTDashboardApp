@@ -8,17 +8,14 @@
 <script>
 export default {
   data(){
-return{
-  alertMessage: 'Alert: Door is Unlocked!  Check the livestream.',
-  showAlert: true,
-}
-  },
-  methods:{
-
+  return{
+    alertMessage: 'Alert: Door is Unlocked!  Check the livestream.',
+    showAlert: true,
   }
+  },
+  methods:{  }
 }
 </script>
-
 <style lang="scss" scoped>
 .wrapper{
   display: flex;
@@ -31,9 +28,7 @@ return{
   height: 50px;
   background-color: #eb7a7a;
   align-items: flex-end;
-  justify-content: space-around;
-
-  margin-top: 10px;
+  justify-content: space-around;  margin-top: 10px;
   margin-bottom: 20px;
   border-style: solid;
   border-radius: 5px;
@@ -41,14 +36,10 @@ return{
   border-top: 0px;
   border-right: 0px;
   border-color: #d94a4a;
-  border-width: thick;
-
-  font-size: 25px;
+  border-width: thick;  font-size: 25px;
   color: white;
   font-family: "Avenir";
   font-weight: bold;
   font-style: italic;
-
 }
-
 </style>

@@ -12,16 +12,12 @@
     </div>
   </section>
 </template>
-
 <script>
 import Chart from 'primevue/chart';
-
 export default {
 	data() {
 		return {
       time: 'weekly',
-      // time: 'monthly',
-      // time: 'yearly',
       basicDataWeekly: {
 				labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 				datasets: [
@@ -93,7 +89,6 @@ export default {
 	}
 }
 </script>
-
 <style lang="scss">
 .chartContainer{
   width: 600px;

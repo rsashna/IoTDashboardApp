@@ -21,7 +21,6 @@
     </div>
   </section>
 </template>
-
 <script>
 export default {
   data(){
@@ -35,7 +34,6 @@ return{
   }
 }
 </script>
-
 <style lang="scss">
 .costContainer{
   display: flex;
@@ -57,7 +55,6 @@ return{
   font-size: 20px;
   text-align: center;
   text-decoration-style: solid;
-  // color: cyan;
 }
 .costLabel{
   padding: 8px;
