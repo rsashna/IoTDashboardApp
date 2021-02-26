@@ -10,7 +10,6 @@ describe("livestream.vue", () => {
   });
 
     it("Test: livestream prompt text should be visible", () => {
-      // expect(component.find().exists()).to.be.true;
       expect(component.text()).to.have.string('View Livestream of Door');
     });
 });

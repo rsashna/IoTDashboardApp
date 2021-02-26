@@ -10,7 +10,6 @@ describe("trendLine.vue", () => {
   });
 
     it("Test: Device Usage Trends prompt text should be visible", () => {
-      // expect(component.find().exists()).to.be.true;
       expect(component.text()).to.have.string('Device Usage Trends');
     });
 });
