@@ -34,5 +34,7 @@ export default {
   display: flex;
   justify-content: center;
   height: 220px;
+  width: 210px;
   background-color: #2c3e50;
-}</style>
+}
+</style>

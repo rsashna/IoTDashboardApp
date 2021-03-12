@@ -47,7 +47,7 @@
           </font-awesome-icon>
       </div>
       <div class="infoPair">
-          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
           <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
@@ -68,7 +68,7 @@
           <img class="image" src="./../assets/gimpfridgeTeal.png" style="width:75px">
       </div>
       <div class="infoPair">
-          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
           <h3 class="dataPoint">$300</h3>
       </div>
     </div>
@@ -94,7 +94,7 @@
           </font-awesome-icon>
       </div>
       <div class="infoPair">
-          <h3 class="dataLabel">Estimated cost of appliance:</h3>
+          <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
           <h3 class="dataPoint">$300 </h3>
       </div>
     </div>
