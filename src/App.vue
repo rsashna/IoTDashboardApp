@@ -141,6 +141,7 @@ export default {
 .rowContainer{
 display: flex;
 flex-direction: row;
+justify-content: space-around;
 }
 .dashboardpage{
   display: block;

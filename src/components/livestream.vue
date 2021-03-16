@@ -1,51 +1,60 @@
 <template>
 <div class="container">
   <div class="camera" >
-    <h3 class="window" v-if="show"> View Livestream of Door </h3>
-    <video autoplay class="feed"></video>
-    <Button class="streambutton" v-on:click="changeState(); this.turnoff='true'">{{streamButton}}</Button>
+    <h3 class="window" v-if="showLabel"> View Livestream of Door </h3>
+    <video id="video" autoplay class="feed"></video>
+    <Button class="streambutton" v-on:click="toggleState();">{{streamButton}}</Button>
   </div>
 <!-- closing the header tag -->
-  </div>
+</div>
 </template>
 <script>
+var localstream;
+var stream;
 export default {
   name: "camera",
   data(){
     return{
-      show:true,
+      showLabel: true,
       streamButton: 'Turn On',
       turnoff: false,
     }
   },
   methods:{
-    changeState(){
-      this.init();
-      this.streamButton = 'Turn Off';
-      if(this.turnoff == true){
-        videoPlayer.stop();
-        this.show = true;
+    // on click ==> togglestate(), x(), y()
+    // if somthing is x -> y
+    // if somthing is y -> x
+    toggleState(){
+      if(this.streamButton == 'Turn On'){
+        // this.showLabel == true;
+        this.init();
+        this.streamButton = 'Turn Off';
+      }else if(this.streamButton == 'Turn Off'){
+        localstream.getVideoTracks()[0].stop();
+        localstream.getTracks().forEach(track => track.stop())
+        console.log("OMG here");
+        this.showLabel = true;
+        this.streamButton = 'Turn On';
       }
     },
     init(){
-      if("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices){
-        navigator.mediaDevices.getUserMedia({video: true}).then( stream =>{
-          const videoPlayer = document.querySelector("video");
-          videoPlayer.srcObject = stream;
-          videoPlayer.play();
-          this.show = false;
-        });
-      }else{
-        alert("Error: camera not working.");
-      }
-      }
+          if("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices){
+            navigator.mediaDevices.getUserMedia({video: true}).then( stream =>{
+            const  videoPlayer = document.querySelector("video");
+              videoPlayer.srcObject = stream;
+                localstream = stream;
+              videoPlayer.play();
+              this.showLabel = false;
+            });
+          }else{
+            alert("Error: camera not working.");
+          }
     },
     beforeMount(){
-      // just need new fn with button, when clicked; this.init(). remove v
-      // this.init();
-    }
-
+    },
+  }
 }
+
 </script>
 <style lang="scss" scoped>
 .window{
@@ -67,13 +76,13 @@ export default {
   max-width: 500px;
 }
 .container{
-  padding: 30px;
+  // padding: 30px;
+  // height: 220px;
+  // width: 210px;
   align-items: center;
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  height: 220px;
-  width: 210px;
   background-color: #2c3e50;
 }
 .streambutton{
