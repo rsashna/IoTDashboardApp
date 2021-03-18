@@ -5,7 +5,6 @@
     <video id="video" autoplay class="feed"></video>
     <Button class="streambutton" v-on:click="toggleState();">{{streamButton}}</Button>
   </div>
-<!-- closing the header tag -->
 </div>
 </template>
 <script>
@@ -21,19 +20,15 @@ export default {
     }
   },
   methods:{
-    // on click ==> togglestate(), x(), y()
-    // if somthing is x -> y
-    // if somthing is y -> x
     toggleState(){
       if(this.streamButton == 'Turn On'){
-        // this.showLabel == true;
         this.init();
         this.streamButton = 'Turn Off';
       }else if(this.streamButton == 'Turn Off'){
         localstream.getVideoTracks()[0].stop();
         localstream.getTracks().forEach(track => track.stop())
-        console.log("OMG here");
         this.showLabel = true;
+        document.getElementById("video").style.display = "none";
         this.streamButton = 'Turn On';
       }
     },
@@ -45,6 +40,7 @@ export default {
                 localstream = stream;
               videoPlayer.play();
               this.showLabel = false;
+              document.getElementById("video").style.display = "flex";
             });
           }else{
             alert("Error: camera not working.");
@@ -67,6 +63,8 @@ export default {
   display: flex;
   justify-content: space-evenly;
   h3{
+    padding-left: 30px;
+    padding-right: 30px;
     align-self: center;
   }
 }
@@ -76,9 +74,6 @@ export default {
   max-width: 500px;
 }
 .container{
-  // padding: 30px;
-  // height: 220px;
-  // width: 210px;
   align-items: center;
   border-radius: 5px;
   display: flex;
