@@ -4,14 +4,14 @@
     <h3 class="subtitle dynamic-subtitle"> Status of Devices </h3>
   </div>
     <div class="wrapper">
-      <div class ="icon">
+      <div class ="icon" :id="3">
           <font-awesome-icon
             icon="door-open"
             size="2x"
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusDoor}} </h3>
+          <h3 class="subtitle dynamic-subtitle">Why {{allstats.title}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -20,11 +20,11 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3>
+        <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3> -->
       </div>
       <div class ="icon">
         <img class="image" src="./../assets/gimpfridgeTeal.png">
-        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3>
+        <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3> -->
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -33,23 +33,36 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusLightBulb}} </h3>
+          <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusLightBulb}} </h3> -->
       </div>
     </div>
   </div>
 </template>
 <script>
+ //import statuses from './../assets/sqlfiles/getStat.js';
+import axios from "axios";
+// var response;
 export default {
   data(){
     return{
-      statusText:{
-            statusDoor: 'ON',
-            statusFan: 'ON',
-            statusFridge: 'ON',
-            statusLightBulb: 'ON',
-      }
+      allstats: []
+      // statusText:{
+      //       statusDoor: 'NA',
+      //       statusFan: 'NA',
+      //       statusFridge: 'NA',
+      //       statusLightBulb: 'NA',
+      //       allstats: [],
+      // }
     }
-  },  methods:{
+  }, methods:{
+  }, created(){
+    axios.get('https://jsonplaceholder.typicode.com/users/1/todos')
+    .then(response => {
+      console.log(response)
+      this.allstats = response.data[3];
+    }).catch(error => {
+      console.log(error)
+    })
   },
 }
 </script>
