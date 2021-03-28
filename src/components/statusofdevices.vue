@@ -4,14 +4,14 @@
     <h3 class="subtitle dynamic-subtitle"> Status of Devices </h3>
   </div>
     <div class="wrapper">
-      <div class ="icon" :id="3">
+      <div class ="icon">
           <font-awesome-icon
             icon="door-open"
             size="2x"
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle">Why {{allstats.title}} </h3>
+          <h3 class="subtitle dynamic-subtitle">{{statusDoor.completed}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -20,11 +20,11 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-        <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3> -->
+        <h3 class="subtitle dynamic-subtitle"> {{statusFan.completed}} </h3>
       </div>
       <div class ="icon">
         <img class="image" src="./../assets/gimpfridgeTeal.png">
-        <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3> -->
+        <h3 class="subtitle dynamic-subtitle"> {{statusFridge.completed}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -33,7 +33,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <!-- <h3 class="subtitle dynamic-subtitle"> {{statusText.statusLightBulb}} </h3> -->
+          <h3 class="subtitle dynamic-subtitle"> {{statusLightBulb.completed}} </h3>
       </div>
     </div>
   </div>
@@ -45,14 +45,12 @@ import axios from "axios";
 export default {
   data(){
     return{
-      allstats: []
-      // statusText:{
-      //       statusDoor: 'NA',
-      //       statusFan: 'NA',
-      //       statusFridge: 'NA',
-      //       statusLightBulb: 'NA',
-      //       allstats: [],
-      // }
+      // allstats: []
+        statusDoor: 'NA',
+        statusFan: 'NA',
+        statusFridge: 'NA',
+        statusLightBulb: 'NA',
+        allstats: [],
     }
   }, methods:{
   }, created(){
@@ -60,6 +58,10 @@ export default {
     .then(response => {
       console.log(response)
       this.allstats = response.data[3];
+      this.statusDoor = response.data[1];
+      this.statusFan = response.data[2];
+      this.statusFridge = response.data[3];
+      this.statusLightBulb = response.data[4];
     }).catch(error => {
       console.log(error)
     })
