@@ -1,10 +1,5 @@
 const sql = require('mssql');
-
 var fs = require('fs');
-fs.open('./../storedJSONs/devicestat.txt', 'w', function (err, file) {
-  if (err) throw err;
-  console.log('Saved!');
-});
 
 const config = {
     user: 'adminhome',
@@ -24,18 +19,19 @@ function getData() {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("SELECT device_status FROM Smart_Devices")
+                    // .query("select * from Smart_Devices")
+                    .query("select * from Weekly_usage")
+                    // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         console.dir('All the Data');
-                        console.dir(dbData);
-                        // body = dbData.stringify;
-                        // var myJSONdata = body.split("=")[1];
-                        // fs.writeFile('./../storedJSONs/devicestat.txt', dbData.stringify, function (err) {
-                        if (err) throw err;
-                        console.log('Saved!');
-                      });
+                        console.log(dbData);
+                        var dataw = JSON.stringify(dbData, null, 1);
+                        fs.writeFile('./../storedJSONs/devicestat.JSON', dataw, written);
+                        function written(err){
+                          console.log('File write complete');
+                        }
                     })
                     .catch(function (error) {
                         console.dir(error);
