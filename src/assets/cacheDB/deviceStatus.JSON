@@ -1,0 +1,60 @@
+{
+ "recordsets": [
+  [
+   {
+    "device_id": 1,
+    "device_name": "Bulb",
+    "device_status": true,
+    "last_started": "2021-02-26T19:17:44.500Z"
+   },
+   {
+    "device_id": 2,
+    "device_name": "Fridge",
+    "device_status": true,
+    "last_started": "2021-02-26T19:21:55.990Z"
+   },
+   {
+    "device_id": 3,
+    "device_name": "Door Lock",
+    "device_status": false,
+    "last_started": "2021-02-26T19:22:20.727Z"
+   },
+   {
+    "device_id": 4,
+    "device_name": "Fan",
+    "device_status": true,
+    "last_started": "2021-02-26T19:22:31.703Z"
+   }
+  ]
+ ],
+ "recordset": [
+  {
+   "device_id": 1,
+   "device_name": "Bulb",
+   "device_status": true,
+   "last_started": "2021-02-26T19:17:44.500Z"
+  },
+  {
+   "device_id": 2,
+   "device_name": "Fridge",
+   "device_status": true,
+   "last_started": "2021-02-26T19:21:55.990Z"
+  },
+  {
+   "device_id": 3,
+   "device_name": "Door Lock",
+   "device_status": false,
+   "last_started": "2021-02-26T19:22:20.727Z"
+  },
+  {
+   "device_id": 4,
+   "device_name": "Fan",
+   "device_status": true,
+   "last_started": "2021-02-26T19:22:31.703Z"
+  }
+ ],
+ "output": {},
+ "rowsAffected": [
+  4
+ ]
+}
