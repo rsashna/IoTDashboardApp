@@ -28,7 +28,7 @@ function getData() {
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../cacheDB/deviceStatus.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/deviceStatus.JSON', dataw, written);
                         function written(err){
                           console.log('File write complete');
                         }
