@@ -82,6 +82,10 @@ export default {
     padding-top: 0px;
     margin: 50px;
   }
+  :hover{
+    opacity: 0.85;
+    cursor: pointer;
+  }
 }
 .wrapper{
   display: flex;

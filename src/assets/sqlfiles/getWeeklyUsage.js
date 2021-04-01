@@ -20,7 +20,7 @@ function getData() {
             .then(function () {
                 new sql.Request()
                     // .query("select * from Smart_Devices")
-                    .query("select jsonData from Weekly_usage")
+                    .query("SELECT jsonData FROM Weekly_usage")
                     // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)

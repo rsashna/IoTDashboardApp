@@ -98,6 +98,7 @@ margin: 5px;
 background-color: #b9f9fa;
 border-radius: 2px;
 border-color: #d7fcf9;
+cursor: pointer;
 }
 @media (max-width: 415px){
   .chartContainer{
