@@ -40,7 +40,7 @@ return{
   flex-direction: column;
   justify-content: center;
   width: 200px;
-  height: 300px;
+  height: 340px;
   margin-top: 20px;
   border-style: solid;
   border-width: medium;
@@ -95,12 +95,13 @@ return{
   .pairContainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
    .infoPair{
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
 }
 @media (max-width: 770px) {
@@ -123,12 +124,13 @@ return{
   .pairContainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
    .infoPair{
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
 }
 </style>
