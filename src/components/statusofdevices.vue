@@ -63,10 +63,10 @@ export default {
     axios.get('/cacheDB/deviceStatus.JSON')
     .then(response => {
       this.allstats = response.data.recordset;
-      this.statusDoor = response.data.recordset[0];
-      this.statusFan = response.data.recordset[1];
-      this.statusFridge = response.data.recordset[2];
-      this.statusLightBulb = response.data.recordset[3];
+      this.statusDoor = response.data.recordset[2];
+      this.statusFan = response.data.recordset[3];
+      this.statusFridge = response.data.recordset[1];
+      this.statusLightBulb = response.data.recordset[0];
     }).catch(error => {
       console.log(error);
     })

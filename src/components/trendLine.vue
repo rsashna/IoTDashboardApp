@@ -24,12 +24,12 @@ export default {
 				labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 				datasets: [
           {
-						label: 'Sample Weekly Usage',
+						label: 'Weekly Usage',
 						backgroundColor: '#fad889',
 						data: []
 					},
           {
-						label: 'Sample Previous Weekly Usage',
+						label: 'Previous Weekly Usage',
 						backgroundColor: '#e8d6ae',
 						data: []
 					}
@@ -84,7 +84,8 @@ export default {
                   gridLines: {
                       drawOnChartArea: false
                   }
-              }]
+              }
+        ],
       	}
       }
 		}
@@ -97,7 +98,7 @@ export default {
         this.alldata = weeklyData1;
         this.basicDataWeekly.datasets[0].data=weeklyData1;
         var weeklyData2 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
-        this.alldata = weeklyData2;
+        // this.alldata = weeklyData2;
         this.basicDataWeekly.datasets[1].data=weeklyData2;
       }).catch(error => {
         console.log(error);
