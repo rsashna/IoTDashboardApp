@@ -14,22 +14,24 @@
 </template>
 <script>
 import Chart from 'primevue/chart';
+import axios from "axios";
 export default {
 	data() {
 		return {
-      time: 'weekly',
+      alldata:[],
+      time: 'yearly',
       basicDataWeekly: {
 				labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 				datasets: [
           {
-						label: 'Sample Weekly Usage',
+						label: 'Weekly Usage',
 						backgroundColor: '#fad889',
-						data: [5, 8, 3, 2, 3, 5, 8]
+						data: []
 					},
           {
-						label: 'Sample Previous Weekly Usage',
+						label: 'Previous Weekly Usage',
 						backgroundColor: '#e8d6ae',
-						data: [6, 7, 5, 6, 6, 5, 7]
+						data: []
 					}
 				]
 			},
@@ -56,11 +58,11 @@ export default {
 						backgroundColor: '#42A5F5',
 						data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56]
 					},
-          {
-						label: 'Sample Previous Yearly Usage',
-						backgroundColor: '#87c3f5',
-						data: [40, 65, 59, 80, 81, 56, 65, 59, 80, 81, 56, 55]
-					}
+          // {
+					// 	label: 'Sample Previous Yearly Usage',
+					// 	backgroundColor: '#87c3f5',
+					// 	data: [40, 65, 59, 80, 81, 56, 65, 59, 80, 81, 56, 55]
+					// }
 				]
 			},
       options: {
@@ -82,11 +84,26 @@ export default {
                   gridLines: {
                       drawOnChartArea: false
                   }
-              }]
+              }
+        ],
       	}
       }
 		}
-	}
+  }, methods:{
+    },
+    mounted(){
+      axios.get('/cacheDB/weeklyUsage.JSON')
+      .then(response => {
+        var weeklyData1 = response.data.recordset[0].jsonData.split("[")[1].split("]")[0].split(",");
+        this.alldata = weeklyData1;
+        this.basicDataWeekly.datasets[0].data=weeklyData1;
+        var weeklyData2 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
+        // this.alldata = weeklyData2;
+        this.basicDataWeekly.datasets[1].data=weeklyData2;
+      }).catch(error => {
+        console.log(error);
+      })
+    },
 }
 </script>
 <style lang="scss">
@@ -98,6 +115,7 @@ margin: 5px;
 background-color: #b9f9fa;
 border-radius: 2px;
 border-color: #d7fcf9;
+cursor: pointer;
 }
 @media (max-width: 415px){
   .chartContainer{

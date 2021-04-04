@@ -11,7 +11,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusDoor}} </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusDoor.device_status}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -20,11 +20,11 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFan}} </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusFan.device_status}} </h3>
       </div>
       <div class ="icon">
         <img class="image" src="./../assets/gimpfridgeTeal.png">
-        <h3 class="subtitle dynamic-subtitle"> {{statusText.statusFridge}} </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusFridge.device_status}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -33,23 +33,43 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusText.statusLightBulb}} </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusLightBulb.device_status}} </h3>
       </div>
     </div>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data(){
     return{
-      statusText:{
-            statusDoor: 'ON',
-            statusFan: 'ON',
-            statusFridge: 'ON',
-            statusLightBulb: 'ON',
-      }
+      // allstats: []
+        statusDoor: 'NA',
+        statusFan: 'NA',
+        statusFridge: 'NA',
+        statusLightBulb: 'NA',
+        allstats: [],
     }
-  },  methods:{
+  }, methods:{
+  }, created(){
+    // axios.get('https://jsonplaceholder.typicode.com/users/1/todos')
+    // .then(response => {
+    //   console.log(response)
+    //   this.allstats = response.data[3];
+    //   this.statusDoor = response.data[1];
+    //   this.statusFan = response.data[2];
+    //   this.statusFridge = response.data[3];
+    //   this.statusLightBulb = response.data[4];
+    axios.get('/cacheDB/deviceStatus.JSON')
+    .then(response => {
+      this.allstats = response.data.recordset;
+      this.statusDoor = response.data.recordset[2];
+      this.statusFan = response.data.recordset[3];
+      this.statusFridge = response.data.recordset[1];
+      this.statusLightBulb = response.data.recordset[0];
+    }).catch(error => {
+      console.log(error);
+    })
   },
 }
 </script>
@@ -61,6 +81,10 @@ export default {
   .dynamic-subtitle{
     padding-top: 0px;
     margin: 50px;
+  }
+  :hover{
+    opacity: 0.85;
+    cursor: pointer;
   }
 }
 .wrapper{

@@ -86,5 +86,6 @@ background-color: #b9f9fa;
 border-radius: 2px;
 border-color: #d7fcf9;
 align-self: flex-end;
+cursor: pointer;
 }
 </style>
