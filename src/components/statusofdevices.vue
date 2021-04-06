@@ -11,7 +11,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusDoor.device_status}} </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusDoor.status_value}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -20,11 +20,11 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-        <h3 class="subtitle dynamic-subtitle"> {{statusFan.device_status}} </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusFan.status_value}} </h3>
       </div>
       <div class ="icon">
         <img class="image" src="./../assets/gimpfridgeTeal.png">
-        <h3 class="subtitle dynamic-subtitle"> {{statusFridge.device_status}} </h3>
+        <h3 class="subtitle dynamic-subtitle"> {{statusFridge.status_value}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -33,7 +33,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusLightBulb.device_status}} </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusLightBulb.status_value}} </h3>
       </div>
     </div>
   </div>
@@ -52,14 +52,6 @@ export default {
     }
   }, methods:{
   }, created(){
-    // axios.get('https://jsonplaceholder.typicode.com/users/1/todos')
-    // .then(response => {
-    //   console.log(response)
-    //   this.allstats = response.data[3];
-    //   this.statusDoor = response.data[1];
-    //   this.statusFan = response.data[2];
-    //   this.statusFridge = response.data[3];
-    //   this.statusLightBulb = response.data[4];
     axios.get('/cacheDB/deviceStatus.JSON')
     .then(response => {
       this.allstats = response.data.recordset;
