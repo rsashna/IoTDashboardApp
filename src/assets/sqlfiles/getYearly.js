@@ -1,3 +1,4 @@
+var start = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
@@ -20,7 +21,7 @@ function getData() {
             .then(function () {
                 new sql.Request()
                     // .query("select * from Smart_Devices")
-                    .query("select jsonData from Weekly_usage")
+                    .query("SELECT * FROM Yearly_usage")
                     // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
@@ -28,9 +29,11 @@ function getData() {
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/weeklyUsage.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/yearlyUsage.JSON', dataw, written);
                         function written(err){
                           console.log('File write complete');
+                          var time = new Date() - start;
+                          console.log("Time to execute: " + time +"ms");
                         }
                     })
                     .catch(function (error) {

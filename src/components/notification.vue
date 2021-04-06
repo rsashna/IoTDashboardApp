@@ -28,7 +28,8 @@ export default {
   height: 50px;
   background-color: #eb7a7a;
   align-items: flex-end;
-  justify-content: space-around;  margin-top: 10px;
+  justify-content: space-around;
+  margin-top: 10px;
   margin-bottom: 20px;
   border-style: solid;
   border-radius: 5px;
@@ -36,10 +37,29 @@ export default {
   border-top: 0px;
   border-right: 0px;
   border-color: #d94a4a;
-  border-width: thick;  font-size: 25px;
+  border-width: thick;
+  font-size: 25px;
   color: white;
   font-family: "Avenir";
   font-weight: bold;
   font-style: italic;
+}
+@media screen and (max-width: 415px){
+  .notifications{
+    width: 90%;
+    font-size: 18px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 815px){
+  .notifications{
+    width: 90%;
+    font-size: 18px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

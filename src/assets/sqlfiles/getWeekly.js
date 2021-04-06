@@ -20,8 +20,8 @@ function getData() {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("select * from Smart_Devices")
-                    // .query("select * from Weekly_usage")
+                    // .query("select * from Smart_Devices")
+                    .query("SELECT jsonData FROM Weekly_usage")
                     // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
@@ -29,7 +29,7 @@ function getData() {
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/deviceStatus.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/weeklyUsage.JSON', dataw, written);
                         function written(err){
                           console.log('File write complete');
                           var time = new Date() - start;

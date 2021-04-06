@@ -1,0 +1,34 @@
+INSERT INTO yearly_Usage
+    VALUES (
+      2002,
+      966.41,
+      926.74,
+      1692.69,
+      1321.35,
+      1101.77,
+      1170.88,
+      820.61,
+      1113.01,
+      1486.69,
+      1031.99,
+      1721.99,
+      1461.38
+      );
+
+
+
+DROP TABLE IF EXISTS Yearly_Usage ;
+CREATE TABLE Yearly_Usage (
+year_ID INTEGER PRIMARY KEY NOT NULL,
+January DECIMAL NOT NULL,
+February DECIMAL NOT NULL,
+March DECIMAL NOT NULL,
+April DECIMAL NOT NULL,
+May DECIMAL NOT NULL,
+June DECIMAL NOT NULL,
+July DECIMAL NOT NULL,
+August DECIMAL NOT NULL,
+September DECIMAL NOT NULL,
+October DECIMAL NOT NULL,
+November DECIMAL NOT NULL,
+December DECIMAL NOT NULL);

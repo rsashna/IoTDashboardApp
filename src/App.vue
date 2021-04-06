@@ -7,7 +7,6 @@
       </notification>
     </section>
         <section class="themecontainer">
-          <!-- theme switcher -->
           <input
             type="checkbox"
             id="theme-switch"
@@ -36,12 +35,6 @@
       <section class="main-title">
         <div class="header-top">
           <div class="container">
-            <h3 class="title dynamic-title">
-              <span v-if="darkMode === true">
-              </span>
-              <span v-else>
-              </span>
-            </h3>
             <h3 class="title dynamic-title">
               Home IoT Dashboard
             </h3>
@@ -107,7 +100,6 @@ export default {
   },
   watch: {
     darkMode: function() {
-      // add/remove class to/from html tag
       let htmlElement = document.documentElement;
       if (this.darkMode) {
         localStorage.setItem("theme", "dark");
@@ -158,13 +150,16 @@ justify-content: space-around;
   display: flex;
   flex-direction: row;
 }
-@media (max-width: 770px) {
+@media (max-width: 815px) {
   #app{
   padding: 5px;
 }
   .rowContainer{
     display: flex;
     flex-direction: column;
+  }
+  .themecontainer{
+    margin-right: 30px;
   }
   .dashboardpage{
     display: block;
@@ -182,6 +177,9 @@ justify-content: space-around;
   .rowContainer{
     display: flex;
     flex-direction: column;
+  }
+  .themecontainer{
+    margin-right: 30px;
   }
   .dashboardpage{
     display: block;
