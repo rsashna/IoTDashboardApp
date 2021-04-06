@@ -1,3 +1,4 @@
+var start = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
@@ -31,6 +32,8 @@ function getData() {
                         fs.writeFile('./../../../public/cacheDB/weeklyUsage.JSON', dataw, written);
                         function written(err){
                           console.log('File write complete');
+                          var time = new Date() - start;
+                          console.log("Time to execute: " + time +"ms");
                         }
                     })
                     .catch(function (error) {
