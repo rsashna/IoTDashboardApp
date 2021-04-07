@@ -1,4 +1,4 @@
-var start = new Date();
+var startW = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
@@ -13,9 +13,9 @@ const config = {
     }
 };
 
-getData();
+getDataWeekly();
 
-function getData() {
+function getDataWeekly() {
     try {
         sql.connect(config)
             .then(function () {
@@ -31,9 +31,9 @@ function getData() {
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/weeklyUsage.JSON', dataw, written);
                         function written(err){
-                          console.log('File write complete');
-                          var time = new Date() - start;
-                          console.log("Time to execute: " + time +"ms");
+                          console.log('Weekly File write complete');
+                          var timeW = new Date() - startW;
+                          console.log("Time to execute: " + timeW +"ms");
                         }
                     })
                     .catch(function (error) {
@@ -47,3 +47,4 @@ function getData() {
         console.dir(error);
     }
 }
+module.exports = getDataWeekly;
