@@ -59,6 +59,7 @@ yearmax = time * 365 * (rate + 100);
 // midWmin = 2;
 // midWmax = 6;
 
+
 for (i = 0; i < 3; i++) {
   onPkWeek[i] = (Math.random() * (weekmax - weekmin + weekmin) + weekmin).toFixed(2);
   offPkWeek[i] = (Math.random() * (weekmax - weekmin + weekmin) + weekmin).toFixed(2);

@@ -36,30 +36,54 @@ VALUES (
 189.84,
 133.82
 );
+=====
 
-====
-
-INSERT INTO weeklyFridgeUse
+INSERT INTO yearlyBulbUse
 VALUES (
 1,
-16586.77,
-17312.30,
-22011.88
+7530.00,
+5661.39,
+7332.48
 );
-INSERT INTO weeklyFridgeUse
+INSERT INTO yearlyBulbUse
 VALUES (
 2,
-13792.05,
-11101.96,
-9764.98
+8902.96,
+6162.36,
+4623.79
 );
-INSERT INTO weeklyFridgeUse
+INSERT INTO yearlyBulbUse
 VALUES (
 3,
-21841.02,
-16034.85,
-10205.21
+6988.67,
+15569.46,
+5861.10
 );
+
+=====
+
+INSERT INTO monthlyBulbUse
+VALUES (
+1,
+880.68,
+852.82,
+804.47
+);
+INSERT INTO monthlyBulbUse
+VALUES (
+2,
+397.21,
+1323.76,
+733.43
+);
+INSERT INTO monthlyBulbUse
+VALUES (
+3,
+894.77,
+988.72,
+397.06
+);
+
 ======
 INSERT INTO weeklyFanUse
 VALUES (
@@ -128,53 +152,77 @@ VALUES (
 8572188.19
 );
 
-=====
+====
 
-INSERT INTO yearlyBulbUse
+INSERT INTO weeklyFridgeUse
 VALUES (
 1,
-7530.00,
-5661.39,
-7332.48
+16586.77,
+17312.30,
+22011.88
 );
-INSERT INTO yearlyBulbUse
+INSERT INTO weeklyFridgeUse
 VALUES (
 2,
-8902.96,
-6162.36,
-4623.79
+13792.05,
+11101.96,
+9764.98
 );
-INSERT INTO yearlyBulbUse
+INSERT INTO weeklyFridgeUse
 VALUES (
 3,
-6988.67,
-15569.46,
-5861.10
+21841.02,
+16034.85,
+10205.21
 );
 
-=====
+====
 
-INSERT INTO monthlyBulbUse
+INSERT INTO monthlyFridgeUse
 VALUES (
 1,
-880.68,
-852.82,
-804.47
+89099.44,
+94223.35,
+93196.08
 );
-INSERT INTO monthlyBulbUse
+INSERT INTO monthlyFridgeUse
 VALUES (
 2,
-397.21,
-1323.76,
-733.43
+39967.61,
+87883.70,
+37688.31
 );
-INSERT INTO monthlyBulbUse
+INSERT INTO monthlyFridgeUse
 VALUES (
 3,
-894.77,
-988.72,
-397.06
+97499.35,
+49770.99,
+77375.43
 );
+====
+
+INSERT INTO yearlyFridgeUse
+VALUES (
+1,
+733679.41,
+897737.34,
+538519.15
+);
+INSERT INTO yearlyFridgeUse
+VALUES (
+2,
+642872.51,
+553167.17,
+1311810.54
+);
+INSERT INTO yearlyFridgeUse
+VALUES (
+3,
+1063831.80,
+1295929.61,
+829361.17
+);
+
 
 ===========
 DROP TABLE IF EXISTS Yearly_Usage ;
