@@ -13,23 +13,23 @@ const config = {
     }
 };
 
-weeklyBulbData();
-weeklyFridgeData();
-weeklyFanData();
+yearlyBulbData();
+yearlyFridgeData();
+yearlyFanData();
 
-function weeklyBulbData() {
+function yearlyBulbData() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("SELECT TOP 2 * FROM weeklyBulbUse ORDER BY week_ID DESC")
+                    .query("SELECT TOP 2 * FROM yearlyBulbUse ORDER BY year_ID DESC")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/weeklyBulbUse.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/yearlyBulbUse.JSON', dataw, written);
                         function written(err){
-                          console.log('Weekly File write complete');
+                          console.log('Yearly File write complete');
                           var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
@@ -46,19 +46,19 @@ function weeklyBulbData() {
     }
 }
 
-function weeklyFridgeData() {
+function yearlyFridgeData() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("SELECT TOP 2 * FROM weeklyFridgeUse ORDER BY week_ID DESC")
+                    .query("SELECT TOP 2 * FROM yearlyFridgeUse ORDER BY year_ID DESC")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/weeklyFridgeUse.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/yearlyFridgeUse.JSON', dataw, written);
                         function written(err){
-                          console.log('Weekly File write complete');
+                          console.log('Yearly File write complete');
                           var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
@@ -75,19 +75,19 @@ function weeklyFridgeData() {
     }
 }
 
-function weeklyFanData() {
+function yearlyFanData() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("SELECT TOP 2 * FROM weeklyFanUse ORDER BY week_ID DESC")
+                    .query("SELECT TOP 2 * FROM yearlyFanUse ORDER BY year_ID DESC")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/weeklyFanUse.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/yearlyFanUse.JSON', dataw, written);
                         function written(err){
-                          console.log('Weekly File write complete');
+                          console.log('Yearly File write complete');
                           var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
@@ -103,4 +103,4 @@ function weeklyFanData() {
         console.dir(error);
     }
 }
-module.exports = weeklyBulbData;
+module.exports = yearlyBulbData;

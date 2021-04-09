@@ -1,0 +1,36 @@
+{
+ "recordsets": [
+  [
+   {
+    "week_ID": 3,
+    "onPk": 284112,
+    "offPk": 285912,
+    "midPk": 155251
+   },
+   {
+    "week_ID": 2,
+    "onPk": 178767,
+    "offPk": 169927,
+    "midPk": 252039
+   }
+  ]
+ ],
+ "recordset": [
+  {
+   "week_ID": 3,
+   "onPk": 284112,
+   "offPk": 285912,
+   "midPk": 155251
+  },
+  {
+   "week_ID": 2,
+   "onPk": 178767,
+   "offPk": 169927,
+   "midPk": 252039
+  }
+ ],
+ "output": {},
+ "rowsAffected": [
+  2
+ ]
+}
