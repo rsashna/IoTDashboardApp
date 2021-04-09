@@ -88,7 +88,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     wOnPeakF = response.data.recordset[0].onPk;
     wOffPeakF = response.data.recordset[0].offPk;
     wMidPeakF = response.data.recordset[0].midPk;
-    resolve(wOnPeakF ,wOffPeakF ,wMidPeakF);
+    // resolve(wOnPeakF ,wOffPeakF ,wMidPeakF);
     console.log(wOnPeakF ,wOffPeakF ,wMidPeakF);
     }).catch(error => {
       console.log(error);
@@ -99,7 +99,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     mOnPeakF = response.data.recordset[0].onPk;
     mOffPeakF = response.data.recordset[0].offPk;
     mMidPeakF = response.data.recordset[0].midPk;
-    resolve(mOnPeakF ,mOffPeakF ,mMidPeakF);
+    // resolve(mOnPeakF ,mOffPeakF ,mMidPeakF);
     console.log(mOnPeakF ,mOffPeakF ,mMidPeakF);
     }).catch(error => {
       console.log(error);
@@ -109,7 +109,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     yOnPeakF = response.data.recordset[0].onPk;
     yOffPeakF = response.data.recordset[0].offPk;
     yMidPeakF = response.data.recordset[0].midPk;
-    resolve(yOnPeakF ,yOffPeakF ,yMidPeakF);
+    // resolve(yOnPeakF ,yOffPeakF ,yMidPeakF);
     console.log(yOnPeakF ,yOffPeakF ,yMidPeakF);
     }).catch(error => {
       console.log(error);
@@ -121,7 +121,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     wOnPeakFr = response.data.recordset[0].onPk;
     wOffPeakFr = response.data.recordset[0].offPk;
     wMidPeakFr = response.data.recordset[0].midPk;
-    resolve(wOnPeakFr, wOffPeakFr, wMidPeakFr);
+    // resolve(wOnPeakFr, wOffPeakFr, wMidPeakFr);
     console.log(wOnPeakFr, wOffPeakFr, wMidPeakFr);
     }).catch(error => {
       console.log(error);
@@ -131,7 +131,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     mOnPeakFr = response.data.recordset[0].onPk;
     mOffPeakFr = response.data.recordset[0].offPk;
     mMidPeakFr = response.data.recordset[0].midPk;
-    resolve(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
+    // resolve(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
     console.log(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
     }).catch(error => {
       console.log(error);
@@ -141,7 +141,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     yOnPeakFr = response.data.recordset[0].onPk;
     yOffPeakFr = response.data.recordset[0].offPk;
     yMidPeakFr = response.data.recordset[0].midPk;
-    resolve(yOnPeakFr, yOffPeakFr , yMidPeakFr);
+    // resolve(yOnPeakFr, yOffPeakFr , yMidPeakFr);
     console.log(yOnPeakFr, yOffPeakFr , yMidPeakFr);
     }).catch(error => {
       console.log(error);
@@ -154,7 +154,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     wOffPeakB = response.data.recordset[0].offPk;
     wMidPeakB = response.data.recordset[0].midPk;
     console.log("wOnPeakB: " + wOnPeakB, wOffPeakB, wMidPeakB);
-    resolve(wOnPeakB, wOffPeakB, wMidPeakB);
+    // resolve(wOnPeakB, wOffPeakB, wMidPeakB);
     console.log(wOnPeakB, wOffPeakB, wMidPeakB);
     }).catch(error => {
       console.log(error);
@@ -164,7 +164,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     mOnPeakB = response.data.recordset[0].onPk;
     mOffPeakB = response.data.recordset[0].offPk;
     mMidPeakB = response.data.recordset[0].midPk;
-    resolve(mOnPeakB, mOffPeakB , mMidPeakB);
+    // resolve(mOnPeakB, mOffPeakB , mMidPeakB);
     console.log(mOnPeakB, mOffPeakB , mMidPeakB);
     }).catch(error => {
       console.log(error);
