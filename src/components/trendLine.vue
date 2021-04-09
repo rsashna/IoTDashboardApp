@@ -43,14 +43,14 @@ export default {
 				labels: ['1', '3', '5', '7', '9', '11', '13', '15', '17', '19', '21', '23', '25', '27', '29', '31'],
 				datasets: [
 					{
-						label: 'Sample Monthly Usage',
+						label: 'Monthly Usage',
 						backgroundColor: '#9CCC65',
-						data: [28, 48, 40, 19, 86, 27, 50, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27]
+						data: []
 					},
           {
-						label: 'Sample Previous Monthly Usage',
+						label: 'Previous Monthly Usage',
 						backgroundColor: '#c0e695',
-						data: [86, 27, 90, 27, 48, 40, 28, 48, 40, 19, 19, 53, 27, 90, 28, 48, 40, 19, 86, 27]
+						data: []
 					}
 				]
 			},
@@ -58,15 +58,15 @@ export default {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 				datasets: [
           {
-						label: 'Sample Yearly Usage',
+						label: 'Yearly Usage',
 						backgroundColor: '#42A5F5',
-						data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56]
+						data: []
 					},
-          // {
-					// 	label: 'Sample Previous Yearly Usage',
-					// 	backgroundColor: '#87c3f5',
-					// 	data: [40, 65, 59, 80, 81, 56, 65, 59, 80, 81, 56, 55]
-					// }
+           {
+					 	label: 'Previous Yearly Usage',
+					 	backgroundColor: '#87c3f5',
+					 	data: []
+					 }
 				]
 			},
       options: {
@@ -104,6 +104,82 @@ export default {
         var weeklyData2 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
         this.basicDataWeekly.datasets[1].data=weeklyData2;
         this.time='weekly';
+      }).catch(error => {
+        console.log(error);
+      }),
+        axios.get('/cacheDB/monthlyUsage.JSON')
+        .then(response => {
+            var monthlyData1 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
+            this.alldata = monthlyData1;
+            this.basicDataMonthly.datasets[0].data=monthlyData1;
+            var monthlyData2 = response.data.recordset[0].jsonData.split("[")[1].split("]")[0].split(",");
+            this.basicDataMonthly.datasets[1].data=monthlyData2;
+            this.time='monthly';
+      }).catch(error => {
+        console.log(error);
+      }),
+        axios.get('/cacheDB/yearlyUsage.JSON')
+        .then(response => {
+            var y0 = response.data.recordset[2].January;
+            var y1 = response.data.recordset[2].February;
+            var y2 = response.data.recordset[2].March;
+            var y3 = response.data.recordset[2].April;
+            var y4 = response.data.recordset[2].May;
+            var y5 = response.data.recordset[2].June;
+            var y6 = response.data.recordset[2].July;
+            var y7 = response.data.recordset[2].August;
+            var y8 = response.data.recordset[2].September;
+            var y9 = response.data.recordset[2].October;
+            var y10 = response.data.recordset[2].November;
+            var y11 = response.data.recordset[2].December;
+                        
+            this.alldata = y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11;
+
+            this.basicDataYearly.datasets[0].data[0] = y0;
+            this.basicDataYearly.datasets[0].data[1] = y1;
+            this.basicDataYearly.datasets[0].data[2] = y2;
+            this.basicDataYearly.datasets[0].data[3] = y3;
+            this.basicDataYearly.datasets[0].data[4] = y4;
+            this.basicDataYearly.datasets[0].data[5] = y5;
+            this.basicDataYearly.datasets[0].data[6] = y6;
+            this.basicDataYearly.datasets[0].data[7] = y7;
+            this.basicDataYearly.datasets[0].data[8] = y8;
+            this.basicDataYearly.datasets[0].data[9] = y9;
+            this.basicDataYearly.datasets[0].data[10] = y10;
+            this.basicDataYearly.datasets[0].data[11] = y11;
+
+            
+            var y00 = response.data.recordset[1].January;
+            var y12 = response.data.recordset[1].February;
+            var y22 = response.data.recordset[1].March;
+            var y33 = response.data.recordset[1].April;
+            var y44 = response.data.recordset[1].May;
+            var y55 = response.data.recordset[1].June;
+            var y66 = response.data.recordset[1].July;
+            var y77 = response.data.recordset[1].August;
+            var y88 = response.data.recordset[1].September;
+            var y99 = response.data.recordset[1].October;
+            var y100 = response.data.recordset[1].November;
+            var y111 = response.data.recordset[1].December;
+
+            this.alldata = y00,y12,y22,y33,y44,y55,y66,y77,y88,y99,y100,y111;
+
+            this.basicDataYearly.datasets[1].data[0] = y00;
+            this.basicDataYearly.datasets[1].data[1] = y12;
+            this.basicDataYearly.datasets[1].data[2] = y22;
+            this.basicDataYearly.datasets[1].data[3] = y33;
+            this.basicDataYearly.datasets[1].data[4] = y44;
+            this.basicDataYearly.datasets[1].data[5] = y55;
+            this.basicDataYearly.datasets[1].data[6] = y66;
+            this.basicDataYearly.datasets[1].data[7] = y77;
+            this.basicDataYearly.datasets[1].data[8] = y88;
+            this.basicDataYearly.datasets[1].data[9] = y99;
+            this.basicDataYearly.datasets[1].data[10] = y100;
+            this.basicDataYearly.datasets[1].data[11] = y111;
+
+           
+
+            this.time='yearly';
       }).catch(error => {
         console.log(error);
       })
