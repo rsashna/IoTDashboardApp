@@ -5,7 +5,7 @@ var fs = require('fs');
 const config = {
     user: 'adminhome',
     password: 'home123#',
-    server: 'homecloudcapstone.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+    server: 'homecloudcapstone2.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
     database: 'smart_home_cloud_database',
     "options": {
         "encrypt": true,
@@ -21,7 +21,7 @@ function getDataWeekly() {
             .then(function () {
                 new sql.Request()
                     // .query("select * from Smart_Devices")
-                    .query("SELECT jsonData FROM Weekly_usage")
+                    .query("SELECT * FROM Weekly_usage")
                     // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
@@ -29,7 +29,7 @@ function getDataWeekly() {
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/weeklyUsage.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/tryer.JSON', dataw, written);
                         function written(err){
                           console.log('Weekly File write complete');
                           var timeW = new Date() - startW;

@@ -13,16 +13,14 @@ const config = {
     }
 };
 
-getData();
+getDataStatus();
 
-function getData() {
+async function getDataStatus() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
                     .query("select * from Smart_Devices")
-                    // .query("select * from Weekly_usage")
-                    // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
@@ -31,7 +29,7 @@ function getData() {
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/deviceStatus.JSON', dataw, written);
                         function written(err){
-                          console.log('File write complete');
+                          console.log('Device Status File write complete');
                           var time = new Date() - start;
                           console.log("Time to execute: " + time +"ms");
                         }
@@ -47,3 +45,4 @@ function getData() {
         console.dir(error);
     }
 }
+// module.exports = getDataStatus;

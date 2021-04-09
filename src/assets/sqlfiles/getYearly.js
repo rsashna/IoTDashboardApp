@@ -1,4 +1,4 @@
-var start = new Date();
+var startY = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
@@ -13,9 +13,9 @@ const config = {
     }
 };
 
-getData();
+getDataYearly();
 
-function getData() {
+async function getDataYearly() {
     try {
         sql.connect(config)
             .then(function () {
@@ -31,9 +31,9 @@ function getData() {
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/yearlyUsage.JSON', dataw, written);
                         function written(err){
-                          console.log('File write complete');
-                          var time = new Date() - start;
-                          console.log("Time to execute: " + time +"ms");
+                          console.log('Yearly File write complete');
+                          var timeY = new Date() - startY;
+                          console.log("Time to execute: " + timeY +"ms");
                         }
                     })
                     .catch(function (error) {
@@ -47,3 +47,4 @@ function getData() {
         console.dir(error);
     }
 }
+module.exports = getDataYearly;
