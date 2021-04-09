@@ -223,6 +223,19 @@ VALUES (
 829361.17
 );
 
+DROP TABLE IF EXISTS Weekly_Usage ;
+CREATE TABLE Weekly_Usage (
+week_ID,
+
+);
+
+=====
+INSERT INTO Weekly_Usage
+    VALUES (
+      1,
+
+      );
+
 
 ===========
 DROP TABLE IF EXISTS Yearly_Usage ;
