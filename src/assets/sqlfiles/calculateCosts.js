@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+var fs = require('fs');
 // local rates in $/kWh
 var off_peak = 8.5;
 var mid_peak = 11.9;
@@ -176,15 +176,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     yMidPeakB = response.data.recordset[0].midPk;
     resolve(yOnPeakB, yOffPeakB , yMidPeakB);
     console.log(yOnPeakB, yOffPeakB , yMidPeakB);
-    }).catch(error => {
-      console.log(error);
-    });
 
-  });
-  }
-
-  function forAsync(){
-    return new Promise(function (resolve) {
     weeklyFan = wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak;
     weeklyFridge = wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak;
     weeklyBulb = wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak;
@@ -197,25 +189,89 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
 
     yearlyFridge =  yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak;
     yearlyBulb =  yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ;
+    // these too
+    weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
+    monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
+    yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
+
+    console.log("cant be NAN" + weeklyCost, monthlyCost, yearlyCost,
+    weeklyFan, weeklyFridge, weeklyBulb,
+     monthlyFan, monthlyFridge, monthlyBulb,
+     yearlyFan, yearlyFridge, yearlyBulb);
+
+
+     var calcCosts = {
+      name: "Newbie Co.",
+      order_count: 0,
+      address: "Po Box City",
+      }
+      var dataw = JSON.stringify(calcCosts, null, 2);
+      fs.writeFile('./../../../public/cacheDB/estCosts.JSON', calcCosts, written);
+      function written(err){
+        console.log('CalcCost File write complete');
+      }
+
+  //   const customer = {
+  //   name: "Newbie Co.",
+  //   order_count: 0,
+  //   address: "Po Box City",
+  //   }
+  //   const jsonString = JSON.stringify(customer)fs.writeFile('./../../../public/cacheDB/estCosts.JSON', jsonString, written)
+  //   function written(err){
+  //   if (err) {
+  //       console.log('Error writing file', err)
+  //   } else {
+  //       console.log('Successfully wrote file')
+  //   }
+  // })
+
+    }).catch(error => {
+      console.log(error);
+    });
+
+  });
+  }
+
+  function forAsync(){
+    return new Promise(function (resolve) {
+    // weeklyFan = wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak;
+    // weeklyFridge = wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak;
+    // weeklyBulb = wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak;
+    //
+    // monthlyFan =  mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak;
+    // monthlyFridge = mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak;
+    // monthlyBulb = mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak;
+    //
+    // yearlyFan = yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak;
+    //
+    // yearlyFridge =  yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak;
+    // yearlyBulb =  yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ;
+    yearlyFridge=yearlyFridge;
     resolve(yearlyFridge);
-    console.log(yearlyFridge);
+    console.log("yrFr" + yearlyFridge);
   });
 }
 
   async function main() {
       var result = await makeGetRequest();
-      console.log("I waited.");
+      // console.log("I waited.");
       var res2 = await forAsync();
 
-   weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
-  monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
-  yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
+  // weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
+  // monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
+  // yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
+
   // For annual estimated cost accordion portion use yearlyFan, yearlyFridge & yearlyBulb;
-  console.log(weeklyCost,monthlyCost, yearlyCost, monthlyFan,monthlyFridge,
-monthlyBulb);
- console.log("WHyy these" + mOnPeakFr, mOffPeakFr, mMidPeakFr);
+  // weeklyCost=
+  // monthlyCost=
+  // yearlyCost=
+  // monthlyFan=
+  // monthlyFridge=
+  // monthlyBulb=
+  // console.log("cant be NAN" + weeklyCost,monthlyCost, yearlyCost, monthlyFan,monthlyFridge,monthlyBulb);
+ // console.log("WHyy these" + mOnPeakFr, mOffPeakFr, mMidPeakFr);
  // console.log("apparently these are fine" + weeklyFan , weeklyFridge, weeklyBulb);
-console.log("apparently these within these are fine" + wOnPeakF , wOffPeakF, wMidPeakF);
+// console.log("apparently these within these are fine" + wOnPeakF , wOffPeakF, wMidPeakF);
 
   }
   main();
