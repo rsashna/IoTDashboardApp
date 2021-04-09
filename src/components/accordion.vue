@@ -48,7 +48,7 @@
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
-          <h3 class="dataPoint">$300 </h3>
+          <h3 class="dataPoint">${{yearlyFan}}</h3>
       </div>
     </div>
       </article>
@@ -69,7 +69,7 @@
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
-          <h3 class="dataPoint">$300</h3>
+          <h3 class="dataPoint">${{yearlyFridge}}</h3>
       </div>
     </div>
       </article>
@@ -95,7 +95,7 @@
       </div>
       <div class="infoPair">
           <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
-          <h3 class="dataPoint">$300 </h3>
+          <h3 class="dataPoint">${{yearlyBulb}}</h3>
       </div>
     </div>
       </article>
@@ -104,6 +104,29 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+export default {
+  data(){
+return{
+  yearlyFan: 320,
+  yearlyFridge: 320,
+  yearlyBulb: 320,
+}
+  },
+  methods:{
+  },
+created(){
+  axios.get('/cacheDB/sumCosts.JSON')
+  .then(response => {
+    // this.allstats = response.data.recordset;
+    this.yearlyFan = response.data[0].yearlyFan.toFixed(2);
+    this.yearlyFridge = response.data[0].yearlyFridge.toFixed(2);
+    this.yearlyBulb = response.data[0].yearlyBulb.toFixed(2);
+  }).catch(error => {
+    console.log(error);
+  })
+},
+}
 </script>
 <style lang="scss">
 .accordianContainer{
