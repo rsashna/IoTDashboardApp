@@ -204,11 +204,17 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
       name: "Newbie Co.",
       order_count: 0,
       address: "Po Box City",
-      }
-      var dataw = JSON.stringify(calcCosts, null, 2);
+    }
+      var calcCosts = JSON.stringify(
+        [{ weeklyCost: Number(weeklyCost) },
+        { monthlyCost: Number(monthlyCost) },
+        { yearlyCost: Number(yearlyCost) }]
+      );
       fs.writeFile('./../../../public/cacheDB/estCosts.JSON', calcCosts, written);
+      console.log(calcCosts);
+      console.log('CalcCost File write complete');
       function written(err){
-        console.log('CalcCost File write complete');
+      console.log(err);
       }
 
   //   const customer = {
