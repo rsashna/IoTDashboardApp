@@ -177,42 +177,48 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     resolve(yOnPeakB, yOffPeakB , yMidPeakB);
     console.log(yOnPeakB, yOffPeakB , yMidPeakB);
 
-    weeklyFan = wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak;
-    weeklyFridge = wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak;
-    weeklyBulb = wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak;
+    weeklyFan = (wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak) / 1000;
+    weeklyFridge = (wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak) / 1000;
+    weeklyBulb = (wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak) / 1000;
 
-    monthlyFan =  mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak;
-    monthlyFridge = mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak;
-    monthlyBulb = mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak;
+    monthlyFan =  (mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak) / 1000;
+    monthlyFridge = (mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak) / 1000;
+    monthlyBulb = (mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak) / 1000;
 
-    yearlyFan = yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak;
+    yearlyFan = (yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak) / 1000;
 
-    yearlyFridge =  yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak;
-    yearlyBulb =  yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ;
+    yearlyFridge =  (yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak) / 1000;
+    yearlyBulb =  (yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ) / 1000;
     // these too
-    weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
-    monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
-    yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
+    weeklyCost = (weeklyFan + weeklyFridge + weeklyBulb) / 1000;
+    monthlyCost = (monthlyFan + monthlyFridge + monthlyBulb) / 1000;
+    yearlyCost = (yearlyFan + yearlyFridge + yearlyBulb) / 1000;
 
     console.log("cant be NAN" + weeklyCost, monthlyCost, yearlyCost,
     weeklyFan, weeklyFridge, weeklyBulb,
      monthlyFan, monthlyFridge, monthlyBulb,
      yearlyFan, yearlyFridge, yearlyBulb);
 
-
-     var calcCosts = {
-      name: "Newbie Co.",
-      order_count: 0,
-      address: "Po Box City",
-    }
       var calcCosts = JSON.stringify(
-        [{ weeklyCost: Number(weeklyCost) },
-        { monthlyCost: Number(monthlyCost) },
-        { yearlyCost: Number(yearlyCost) }]
+        [{ weeklyCost: Number(weeklyCost),
+         monthlyCost: Number(monthlyCost),
+         yearlyCost: Number(yearlyCost) }]
       );
       fs.writeFile('./../../../public/cacheDB/estCosts.JSON', calcCosts, written);
       console.log(calcCosts);
       console.log('CalcCost File write complete');
+      function written(err){
+      console.log(err);
+      }
+
+      var summaryCosts = JSON.stringify(
+        [{ yearlyFan: Number(yearlyFan),
+         yearlyFridge: Number(yearlyFridge),
+         yearlyBulb: Number(yearlyBulb) }]
+      );
+      fs.writeFile('./../../../public/cacheDB/sumCosts.JSON', summaryCosts, written);
+      // console.log(calcCosts);
+      console.log('SumCost File write complete');
       function written(err){
       console.log(err);
       }

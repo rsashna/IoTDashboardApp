@@ -22,6 +22,7 @@
   </section>
 </template>
 <script>
+import axios from "axios";
 export default {
   data(){
 return{
@@ -31,7 +32,18 @@ return{
 }
   },
   methods:{
-  }
+  },
+  created(){
+    axios.get('/cacheDB/estCosts.JSON')
+    .then(response => {
+      // this.allstats = response.data.recordset;
+      this.weeklyval = response.data[0].weeklyCost.toFixed(2);
+      this.monthlyval = response.data[0].monthlyCost.toFixed(2);
+      this.yearlyval = response.data[0].yearlyCost.toFixed(2);
+    }).catch(error => {
+      console.log(error);
+    })
+  },
 }
 </script>
 <style lang="scss">
