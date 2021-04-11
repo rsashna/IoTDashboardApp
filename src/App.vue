@@ -7,7 +7,6 @@
       </notification>
     </section>
         <section class="themecontainer">
-          <!-- theme switcher -->
           <input
             type="checkbox"
             id="theme-switch"
@@ -101,7 +100,6 @@ export default {
   },
   watch: {
     darkMode: function() {
-      // add/remove class to/from html tag
       let htmlElement = document.documentElement;
       if (this.darkMode) {
         localStorage.setItem("theme", "dark");

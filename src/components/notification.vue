@@ -6,14 +6,23 @@
 </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data(){
   return{
     alertMessage: 'Alert: Door is Unlocked!  Check the livestream.',
-    showAlert: true,
+    showAlert: false,
   }
   },
-  methods:{  }
+  methods:{  },
+  created(){
+    axios.get('/cacheDB/deviceStatus.JSON')
+    .then(response => {
+      this.showAlert = response.data.recordset[2].device_status;
+    }).catch(error => {
+      console.log(error);
+    })
+  },
 }
 </script>
 <style lang="scss" scoped>

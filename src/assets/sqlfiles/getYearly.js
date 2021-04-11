@@ -1,4 +1,4 @@
-var start = new Date();
+var startY = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
@@ -13,25 +13,27 @@ const config = {
     }
 };
 
-getDataStatus();
+getDataYearly();
 
-async function getDataStatus() {
+async function getDataYearly() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("select * from Smart_Devices")
+                    // .query("select * from Smart_Devices")
+                    .query("SELECT * FROM Yearly_usage")
+                    // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/deviceStatus.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/yearlyUsage.JSON', dataw, written);
                         function written(err){
-                          console.log('Device Status File write complete');
-                          var time = new Date() - start;
-                          console.log("Time to execute: " + time +"ms");
+                          console.log('Yearly File write complete');
+                          var timeY = new Date() - startY;
+                          console.log("Time to execute: " + timeY +"ms");
                         }
                     })
                     .catch(function (error) {
@@ -45,4 +47,4 @@ async function getDataStatus() {
         console.dir(error);
     }
 }
-// module.exports = getDataStatus;
+module.exports = getDataYearly;

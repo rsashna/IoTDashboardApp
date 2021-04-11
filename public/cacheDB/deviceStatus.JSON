@@ -5,25 +5,29 @@
     "device_id": 1,
     "device_name": "Bulb",
     "device_status": true,
-    "last_started": "2021-02-26T19:17:44.500Z"
+    "last_started": "2021-02-26T19:17:44.500Z",
+    "status_value": "ON"
    },
    {
     "device_id": 2,
     "device_name": "Fridge",
     "device_status": true,
-    "last_started": "2021-02-26T19:21:55.990Z"
+    "last_started": "2021-02-26T19:21:55.990Z",
+    "status_value": "ON"
    },
    {
     "device_id": 3,
     "device_name": "Door Lock",
     "device_status": false,
-    "last_started": "2021-02-26T19:22:20.727Z"
+    "last_started": "2021-02-26T19:22:20.727Z",
+    "status_value": "OFF"
    },
    {
     "device_id": 4,
     "device_name": "Fan",
     "device_status": true,
-    "last_started": "2021-02-26T19:22:31.703Z"
+    "last_started": "2021-02-26T19:22:31.703Z",
+    "status_value": "ON"
    }
   ]
  ],
@@ -32,25 +36,29 @@
    "device_id": 1,
    "device_name": "Bulb",
    "device_status": true,
-   "last_started": "2021-02-26T19:17:44.500Z"
+   "last_started": "2021-02-26T19:17:44.500Z",
+   "status_value": "ON"
   },
   {
    "device_id": 2,
    "device_name": "Fridge",
    "device_status": true,
-   "last_started": "2021-02-26T19:21:55.990Z"
+   "last_started": "2021-02-26T19:21:55.990Z",
+   "status_value": "ON"
   },
   {
    "device_id": 3,
    "device_name": "Door Lock",
    "device_status": false,
-   "last_started": "2021-02-26T19:22:20.727Z"
+   "last_started": "2021-02-26T19:22:20.727Z",
+   "status_value": "OFF"
   },
   {
    "device_id": 4,
    "device_name": "Fan",
    "device_status": true,
-   "last_started": "2021-02-26T19:22:31.703Z"
+   "last_started": "2021-02-26T19:22:31.703Z",
+   "status_value": "ON"
   }
  ],
  "output": {},

@@ -1,11 +1,11 @@
-var start = new Date();
+var startW = new Date();
 const sql = require('mssql');
 var fs = require('fs');
 
 const config = {
     user: 'adminhome',
     password: 'home123#',
-    server: 'homecloudcapstone.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+    server: 'homecloudcapstone2.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
     database: 'smart_home_cloud_database',
     "options": {
         "encrypt": true,
@@ -13,25 +13,27 @@ const config = {
     }
 };
 
-getDataStatus();
+getDataWeekly();
 
-async function getDataStatus() {
+function getDataWeekly() {
     try {
         sql.connect(config)
             .then(function () {
                 new sql.Request()
-                    .query("select * from Smart_Devices")
+                    // .query("select * from Smart_Devices")
+                    .query("SELECT * FROM Weekly_usage")
+                    // .query("select * from Yearly_usage")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/deviceStatus.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/tryer.JSON', dataw, written);
                         function written(err){
-                          console.log('Device Status File write complete');
-                          var time = new Date() - start;
-                          console.log("Time to execute: " + time +"ms");
+                          console.log('Weekly File write complete');
+                          var timeW = new Date() - startW;
+                          console.log("Time to execute: " + timeW +"ms");
                         }
                     })
                     .catch(function (error) {
@@ -45,4 +47,4 @@ async function getDataStatus() {
         console.dir(error);
     }
 }
-// module.exports = getDataStatus;
+module.exports = getDataWeekly;

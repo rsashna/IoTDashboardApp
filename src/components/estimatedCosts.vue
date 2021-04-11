@@ -22,16 +22,28 @@
   </section>
 </template>
 <script>
+import axios from "axios";
 export default {
   data(){
 return{
-  weeklyval: 320,
-  monthlyval: 820,
-  yearlyval: 13720,
+  weeklyval: [],
+  monthlyval: [],
+  yearlyval: [],
 }
   },
   methods:{
-  }
+  },
+  beforeCreate(){
+    axios.get('/cacheDB/estCosts.JSON')
+    .then(response => {
+      // this.allstats = response.data.recordset;
+      this.weeklyval = response.data[0].weeklyCost.toFixed(2);
+      this.monthlyval = response.data[0].monthlyCost.toFixed(2);
+      this.yearlyval = response.data[0].yearlyCost.toFixed(2);
+    }).catch(error => {
+      console.log(error);
+    })
+  },
 }
 </script>
 <style lang="scss">
@@ -40,7 +52,7 @@ return{
   flex-direction: column;
   justify-content: center;
   width: 200px;
-  height: 300px;
+  height: 340px;
   margin-top: 20px;
   border-style: solid;
   border-width: medium;
@@ -95,12 +107,13 @@ return{
   .pairContainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
    .infoPair{
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
 }
 @media (max-width: 770px) {
@@ -123,12 +136,13 @@ return{
   .pairContainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
    .infoPair{
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
 }
 </style>
