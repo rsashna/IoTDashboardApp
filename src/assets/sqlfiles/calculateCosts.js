@@ -1,9 +1,9 @@
 const axios = require('axios');
 var fs = require('fs');
 // local rates in $/kWh
-var off_peak = 8.5;
-var mid_peak = 11.9;
-var on_peak = 17.9;
+var off_peak = 0.085;
+var mid_peak = 0.119;
+var on_peak = 0.179;
 
 var wOnPeakF =2;
 var wOffPeakF =2;
@@ -45,72 +45,41 @@ var yearlyFan;
 var yearlyFridge;
 var yearlyBulb;
 
-var  weeklyCost;
+var weeklyCost;
 var monthlyCost;
 var yearlyCost;
-
-//     return{
-// wOnPeakF : 2,
-// wOffPeakF: 2,
-// wMidPeakF: 2,
-// wOnPeakFr: 2,
-// wOffPeakFr: 2,
-// wMidPeakFr: 2,
-// wOnPeakB: 2,
-// wOffPeakB: 2,
-// wMidPeakB: 2,
-// mOnPeakF: 2,
-// mOffPeakF: 2,
-// mMidPeakF: 2,
-// mOnPeakFr: 2,
-// mOffPeakFr: 2,
-// mMidPeakFr: 2,
-// mOnPeakB: 2,
-// mOffPeakB: 2,
-// mMidPeakB: 2,
-// yOnPeakF: 2,
-// yOffPeakF: 2,
-// yMidPeakF: 2,
-// yOnPeakFr: 2,
-// yOffPeakFr: 2,
-// yMidPeakFr: 2,
-// yOnPeakB: 2,
-// yOffPeakB: 2,
-// yMidPeakB: 2
-// }
-// }
 
 // data();
 function makeGetRequest(path) {
     return new Promise(function (resolve) {
 axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     .then(response => {
-    wOnPeakF = response.data.recordset[0].onPk;
-    wOffPeakF = response.data.recordset[0].offPk;
-    wMidPeakF = response.data.recordset[0].midPk;
+    wOnPeakF = response.data.recordset[0].onPk / 1000;
+    wOffPeakF = response.data.recordset[0].offPk / 1000;
+    wMidPeakF = response.data.recordset[0].midPk / 1000;
     resolve(wOnPeakF ,wOffPeakF ,wMidPeakF);
-    console.log(wOnPeakF ,wOffPeakF ,wMidPeakF);
+    // console.log(wOnPeakF ,wOffPeakF ,wMidPeakF);
     }).catch(error => {
       console.log(error);
     });
 
     axios.get('http://localhost:8080//cacheDB/monthlyFanUse.JSON')
     .then(response => {
-    mOnPeakF = response.data.recordset[0].onPk;
-    mOffPeakF = response.data.recordset[0].offPk;
-    mMidPeakF = response.data.recordset[0].midPk;
+    mOnPeakF = response.data.recordset[0].onPk / 1000;
+    mOffPeakF = response.data.recordset[0].offPk / 1000;
+    mMidPeakF = response.data.recordset[0].midPk / 1000;
     resolve(mOnPeakF ,mOffPeakF ,mMidPeakF);
-    console.log(mOnPeakF ,mOffPeakF ,mMidPeakF);
+    // console.log(mOnPeakF ,mOffPeakF ,mMidPeakF);
     }).catch(error => {
       console.log(error);
     });
     axios.get('http://localhost:8080//cacheDB/yearlyFanUse.JSON')
     .then(response => {
-    yOnPeakF = response.data.recordset[0].onPk;
-    yOffPeakF = response.data.recordset[0].offPk;
-    yMidPeakF = response.data.recordset[0].midPk;
+    yOnPeakF = response.data.recordset[0].onPk / 1000;
+    yOffPeakF = response.data.recordset[0].offPk / 1000;
+    yMidPeakF = response.data.recordset[0].midPk / 1000;
     resolve(yOnPeakF ,yOffPeakF ,yMidPeakF);
-    console.log(yOnPeakF ,yOffPeakF ,yMidPeakF);
+    // console.log(yOnPeakF ,yOffPeakF ,yMidPeakF);
     }).catch(error => {
       console.log(error);
     });
@@ -118,29 +87,29 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
 
     axios.get('http://localhost:8080//cacheDB/weeklyFridgeUse.JSON')
     .then(response => {
-    wOnPeakFr = response.data.recordset[0].onPk;
-    wOffPeakFr = response.data.recordset[0].offPk;
-    wMidPeakFr = response.data.recordset[0].midPk;
+    wOnPeakFr = response.data.recordset[0].onPk / 1000;
+    wOffPeakFr = response.data.recordset[0].offPk / 1000;
+    wMidPeakFr = response.data.recordset[0].midPk / 1000;
     resolve(wOnPeakFr, wOffPeakFr, wMidPeakFr);
-    console.log(wOnPeakFr, wOffPeakFr, wMidPeakFr);
+    // console.log(wOnPeakFr, wOffPeakFr, wMidPeakFr);
     }).catch(error => {
       console.log(error);
     });
     axios.get('http://localhost:8080//cacheDB/monthlyFridgeUse.JSON')
     .then(response => {
-    mOnPeakFr = response.data.recordset[0].onPk;
-    mOffPeakFr = response.data.recordset[0].offPk;
-    mMidPeakFr = response.data.recordset[0].midPk;
+    mOnPeakFr = response.data.recordset[0].onPk / 1000;
+    mOffPeakFr = response.data.recordset[0].offPk / 1000;
+    mMidPeakFr = response.data.recordset[0].midPk / 1000;
     resolve(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
-    console.log(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
+    // console.log(mOnPeakFr,mOffPeakFr ,mMidPeakFr);
     }).catch(error => {
       console.log(error);
     });
     axios.get('http://localhost:8080//cacheDB/yearlyFridgeUse.JSON')
     .then(response => {
-    yOnPeakFr = response.data.recordset[0].onPk;
-    yOffPeakFr = response.data.recordset[0].offPk;
-    yMidPeakFr = response.data.recordset[0].midPk;
+    yOnPeakFr = response.data.recordset[0].onPk / 1000;
+    yOffPeakFr = response.data.recordset[0].offPk / 1000;
+    yMidPeakFr = response.data.recordset[0].midPk / 1000;
     resolve(yOnPeakFr, yOffPeakFr , yMidPeakFr);
     console.log(yOnPeakFr, yOffPeakFr , yMidPeakFr);
     }).catch(error => {
@@ -150,51 +119,54 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
 
     axios.get('http://localhost:8080//cacheDB/weeklyBulbUse.JSON')
     .then(response => {
-    wOnPeakB = response.data.recordset[0].onPk;
-    wOffPeakB = response.data.recordset[0].offPk;
-    wMidPeakB = response.data.recordset[0].midPk;
-    console.log("wOnPeakB: " + wOnPeakB, wOffPeakB, wMidPeakB);
+    wOnPeakB = response.data.recordset[0].onPk / 1000;
+    wOffPeakB = response.data.recordset[0].offPk / 1000;
+    wMidPeakB = response.data.recordset[0].midPk / 1000;
+    // console.log("wOnPeakB: " + wOnPeakB, wOffPeakB, wMidPeakB);
     resolve(wOnPeakB, wOffPeakB, wMidPeakB);
-    console.log(wOnPeakB, wOffPeakB, wMidPeakB);
+    // console.log(wOnPeakB, wOffPeakB, wMidPeakB);
     }).catch(error => {
       console.log(error);
     });
     axios.get('http://localhost:8080//cacheDB/monthlyBulbUse.JSON')
     .then(response => {
-    mOnPeakB = response.data.recordset[0].onPk;
-    mOffPeakB = response.data.recordset[0].offPk;
-    mMidPeakB = response.data.recordset[0].midPk;
+    mOnPeakB = response.data.recordset[0].onPk / 1000;
+    mOffPeakB = response.data.recordset[0].offPk / 1000;
+    mMidPeakB = response.data.recordset[0].midPk / 1000;
     resolve(mOnPeakB, mOffPeakB , mMidPeakB);
-    console.log(mOnPeakB, mOffPeakB , mMidPeakB);
+    // console.log(mOnPeakB, mOffPeakB , mMidPeakB);
     }).catch(error => {
       console.log(error);
     });
     axios.get('http://localhost:8080//cacheDB/yearlyBulbUse.JSON')
     .then(response => {
-    yOnPeakB = response.data.recordset[0].onPk;
-    yOffPeakB = response.data.recordset[0].offPk;
-    yMidPeakB = response.data.recordset[0].midPk;
+    yOnPeakB = response.data.recordset[0].onPk / 1000;
+    yOffPeakB = response.data.recordset[0].offPk / 1000;
+    yMidPeakB = response.data.recordset[0].midPk / 1000;
     resolve(yOnPeakB, yOffPeakB , yMidPeakB);
-    console.log(yOnPeakB, yOffPeakB , yMidPeakB);
+    //console.log(yOnPeakB, yOffPeakB , yMidPeakB);
+    if(yMidPeakB !== 2){
+    weeklyFan = wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak;
+    weeklyFridge = wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak;
+    weeklyBulb = wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak;
 
-    weeklyFan = (wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak) / 1000;
-    weeklyFridge = (wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak) / 1000;
-    weeklyBulb = (wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak) / 1000;
+    monthlyFan = mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak;
+    monthlyFridge = mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak;
+    monthlyBulb = mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak;
 
-    monthlyFan =  (mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak) / 1000;
-    monthlyFridge = (mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak) / 1000;
-    monthlyBulb = (mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak) / 1000;
-
-    yearlyFan = (yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak) / 1000;
-    yearlyFridge =  (yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak) / 1000;
-    yearlyBulb =  (yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ) / 1000;
+    yearlyFan = yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak;
+    yearlyFridge = yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak;
+    yearlyBulb = yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ;
+    }
     // these too
-    weeklyCost = (weeklyFan + weeklyFridge + weeklyBulb) / 1000;
-    monthlyCost = (monthlyFan + monthlyFridge + monthlyBulb) / 1000;
-    yearlyCost = (yearlyFan + yearlyFridge + yearlyBulb) / 1000;
+    if(yearlyBulb){
+    weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
+    monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
+    yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
 
+    console.log("calc!"+yOnPeakF, on_peak, yOffPeakF, off_peak, yMidPeakF, mid_peak);
     console.log("cant be NAN" + weeklyCost, monthlyCost, yearlyCost,
-    weeklyFan, weeklyFridge, weeklyBulb,
+     weeklyFan, weeklyFridge, weeklyBulb,
      monthlyFan, monthlyFridge, monthlyBulb,
      yearlyFan, yearlyFridge, yearlyBulb);
 
@@ -221,7 +193,7 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
       function written(err){
       console.log(err);
       }
-
+    }
   //   const customer = {
   //   name: "Newbie Co.",
   //   order_count: 0,
@@ -243,30 +215,11 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
   });
   }
 
-  function forAsync(){
-    return new Promise(function (resolve) {
-    // weeklyFan = wOnPeakF * on_peak + wOffPeakF * off_peak + wMidPeakF * mid_peak;
-    // weeklyFridge = wOnPeakFr * on_peak + wOffPeakFr * off_peak + wMidPeakFr *mid_peak;
-    // weeklyBulb = wOnPeakB * on_peak + wOffPeakB * off_peak + wMidPeakB * mid_peak;
-    //
-    // monthlyFan =  mOnPeakF * on_peak + mOffPeakF * off_peak + mMidPeakF * mid_peak;
-    // monthlyFridge = mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak;
-    // monthlyBulb = mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak;
-    //
-    // yearlyFan = yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak;
-    //
-    // yearlyFridge =  yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak;
-    // yearlyBulb =  yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ;
-    yearlyFridge=yearlyFridge;
-    resolve(yearlyFridge);
-    console.log("yrFr" + yearlyFridge);
-  });
-}
 
   async function main() {
       var result = await makeGetRequest();
       // console.log("I waited.");
-      var res2 = await forAsync();
+      //var res2 = await forAsync();
 
   // weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
   // monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
