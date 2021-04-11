@@ -185,9 +185,8 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
     monthlyFridge = (mOnPeakFr * on_peak + mOffPeakFr * off_peak + mMidPeakFr *mid_peak) / 1000;
     monthlyBulb = (mOnPeakB * on_peak + mOffPeakB * off_peak + mMidPeakB * mid_peak) / 1000;
 
-    yearlyFan = (yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak) / 100000;
-
-    yearlyFridge =  (yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak) / 100000;
+    yearlyFan = (yOnPeakF * on_peak + yOffPeakF * off_peak + yMidPeakF * mid_peak) / 1000;
+    yearlyFridge =  (yOnPeakFr * on_peak + yOffPeakFr * off_peak + yMidPeakFr* mid_peak) / 1000;
     yearlyBulb =  (yOnPeakB * on_peak + yOffPeakB * off_peak + yMidPeakB * mid_peak ) / 1000;
     // these too
     weeklyCost = (weeklyFan + weeklyFridge + weeklyBulb) / 1000;

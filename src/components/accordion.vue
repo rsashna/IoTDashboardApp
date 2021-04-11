@@ -21,8 +21,8 @@
               </font-awesome-icon>
           </div>
       <div class="infoPair">
-          <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
-          <h3 class="dataPoint">$300 </h3>
+          <!-- <h3 class="dataLabel">Estimated annual cost of appliance:</h3>
+          <h3 class="dataPoint">$300 </h3> -->
       </div>
     </div>
       </article>
@@ -108,14 +108,14 @@ import axios from "axios";
 export default {
   data(){
 return{
-  yearlyFan: 320,
-  yearlyFridge: 320,
-  yearlyBulb: 320,
+  yearlyFan: [],
+  yearlyFridge: [],
+  yearlyBulb: [],
 }
   },
   methods:{
   },
-created(){
+beforeCreate(){
   axios.get('/cacheDB/sumCosts.JSON')
   .then(response => {
     // this.allstats = response.data.recordset;

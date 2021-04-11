@@ -26,14 +26,14 @@ import axios from "axios";
 export default {
   data(){
 return{
-  weeklyval: 320,
-  monthlyval: 820,
-  yearlyval: 13720,
+  weeklyval: [],
+  monthlyval: [],
+  yearlyval: [],
 }
   },
   methods:{
   },
-  created(){
+  beforeCreate(){
     axios.get('/cacheDB/estCosts.JSON')
     .then(response => {
       // this.allstats = response.data.recordset;
