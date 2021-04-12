@@ -103,7 +103,6 @@ export default {
         this.basicDataWeekly.datasets[0].data=weeklyData1;
         var weeklyData2 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
         this.basicDataWeekly.datasets[1].data=weeklyData2;
-        this.time='weekly';
       }).catch(error => {
         console.log(error);
       }),
@@ -114,25 +113,24 @@ export default {
             this.basicDataMonthly.datasets[0].data=monthlyData1;
             var monthlyData2 = response.data.recordset[0].jsonData.split("[")[1].split("]")[0].split(",");
             this.basicDataMonthly.datasets[1].data=monthlyData2;
-            this.time='monthly';
       }).catch(error => {
         console.log(error);
       }),
         axios.get('/cacheDB/yearlyUsage.JSON')
         .then(response => {
-            var y0 = response.data.recordset[2].January;
-            var y1 = response.data.recordset[2].February;
-            var y2 = response.data.recordset[2].March;
-            var y3 = response.data.recordset[2].April;
-            var y4 = response.data.recordset[2].May;
-            var y5 = response.data.recordset[2].June;
-            var y6 = response.data.recordset[2].July;
-            var y7 = response.data.recordset[2].August;
-            var y8 = response.data.recordset[2].September;
-            var y9 = response.data.recordset[2].October;
-            var y10 = response.data.recordset[2].November;
-            var y11 = response.data.recordset[2].December;
-                        
+            var y0 = response.data.recordset[1].January;
+            var y1 = response.data.recordset[1].February;
+            var y2 = response.data.recordset[1].March;
+            var y3 = response.data.recordset[1].April;
+            var y4 = response.data.recordset[1].May;
+            var y5 = response.data.recordset[1].June;
+            var y6 = response.data.recordset[1].July;
+            var y7 = response.data.recordset[1].August;
+            var y8 = response.data.recordset[1].September;
+            var y9 = response.data.recordset[1].October;
+            var y10 = response.data.recordset[1].November;
+            var y11 = response.data.recordset[1].December;
+
             this.alldata = y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11;
 
             this.basicDataYearly.datasets[0].data[0] = y0;
@@ -148,19 +146,19 @@ export default {
             this.basicDataYearly.datasets[0].data[10] = y10;
             this.basicDataYearly.datasets[0].data[11] = y11;
 
-            
-            var y00 = response.data.recordset[1].January;
-            var y12 = response.data.recordset[1].February;
-            var y22 = response.data.recordset[1].March;
-            var y33 = response.data.recordset[1].April;
-            var y44 = response.data.recordset[1].May;
-            var y55 = response.data.recordset[1].June;
-            var y66 = response.data.recordset[1].July;
-            var y77 = response.data.recordset[1].August;
-            var y88 = response.data.recordset[1].September;
-            var y99 = response.data.recordset[1].October;
-            var y100 = response.data.recordset[1].November;
-            var y111 = response.data.recordset[1].December;
+
+            var y00 = response.data.recordset[0].January;
+            var y12 = response.data.recordset[0].February;
+            var y22 = response.data.recordset[0].March;
+            var y33 = response.data.recordset[0].April;
+            var y44 = response.data.recordset[0].May;
+            var y55 = response.data.recordset[0].June;
+            var y66 = response.data.recordset[0].July;
+            var y77 = response.data.recordset[0].August;
+            var y88 = response.data.recordset[0].September;
+            var y99 = response.data.recordset[0].October;
+            var y100 = response.data.recordset[0].November;
+            var y111 = response.data.recordset[0].December;
 
             this.alldata = y00,y12,y22,y33,y44,y55,y66,y77,y88,y99,y100,y111;
 
@@ -176,10 +174,7 @@ export default {
             this.basicDataYearly.datasets[1].data[9] = y99;
             this.basicDataYearly.datasets[1].data[10] = y100;
             this.basicDataYearly.datasets[1].data[11] = y111;
-
-           
-
-            this.time='yearly';
+            this.time='weekly';
       }).catch(error => {
         console.log(error);
       })

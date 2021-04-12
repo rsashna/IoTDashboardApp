@@ -35,8 +35,8 @@
         </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="dataLabel">Peak hours used:</h3>
-          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Last On:</h3>
+          <h3 class="dataPoint">{{fanTimeStamp}}</h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -61,8 +61,8 @@
       </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="dataLabel">Peak hours used:</h3>
-          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Last On:</h3>
+          <h3 class="dataPoint">{{fridgeTimeStamp}}</h3>
       </div>
       <div class ="icon" >
           <img class="image" src="./../assets/gimpfridgeTeal.png" style="width:75px">
@@ -82,8 +82,8 @@
          </div>
     <div class="wrapper">
       <div class="infoPair">
-          <h3 class="dataLabel">Peak hours used:</h3>
-          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Last On:</h3>
+          <h3 class="dataPoint">{{bulbTimeStamp}}</h3>
       </div>
       <div class ="icon" >
           <font-awesome-icon
@@ -112,6 +112,9 @@ return{
   yearlyFridge: [],
   yearlyBulb: [],
   doorTimeStamp: [],
+  fanTimeStamp: [],
+  fridgeTimeStamp: [],
+  bulbTimeStamp: [],
 }
   },
   methods:{
@@ -130,6 +133,9 @@ beforeCreate(){
   .then(response => {
     // this.allstats = response.data.recordset;
     this.doorTimeStamp = response.data.recordset[2].last_started.replace("T"," ").replace("."," ").substring(0,19);
+    this.fanTimeStamp = response.data.recordset[2].last_started.replace("T"," ").replace("."," ").substring(0,19);
+    this.fridgeTimeStamp = response.data.recordset[2].last_started.replace("T"," ").replace("."," ").substring(0,19);
+    this.bulbTimeStamp = response.data.recordset[2].last_started.replace("T"," ").replace("."," ").substring(0,19);
   }).catch(error => {
     console.log(error);
   })
