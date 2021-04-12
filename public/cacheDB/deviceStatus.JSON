@@ -18,9 +18,9 @@
    {
     "device_id": 3,
     "device_name": "Door Lock",
-    "device_status": false,
+    "device_status": true,
     "last_started": "2021-02-26T19:22:20.727Z",
-    "status_value": "OFF"
+    "status_value": "ON"
    },
    {
     "device_id": 4,
@@ -49,9 +49,9 @@
   {
    "device_id": 3,
    "device_name": "Door Lock",
-   "device_status": false,
+   "device_status": true,
    "last_started": "2021-02-26T19:22:20.727Z",
-   "status_value": "OFF"
+   "status_value": "ON"
   },
   {
    "device_id": 4,

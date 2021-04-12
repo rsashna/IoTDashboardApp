@@ -2,77 +2,67 @@
  "recordsets": [
   [
    {
-    "week_id": 1,
-    "Monday": 253.24,
-    "Tuesday": 312.34,
-    "Wednesday": 300.56,
-    "Thursday": 198.23,
-    "Friday": 197.1,
-    "Saturday": 203.45,
-    "Sunday": 268.76,
-    "jsonData": "{data: [253.24,312.34,300.56,198.23,197.10,203.45,268.76]}"
+    "device_id": 1,
+    "device_name": "Bulb",
+    "device_status": true,
+    "last_started": "2021-02-26T19:17:44.500Z",
+    "status_value": "ON"
    },
    {
-    "week_id": 2,
-    "Monday": 245.21,
-    "Tuesday": 242.78,
-    "Wednesday": 330.36,
-    "Thursday": 148.13,
-    "Friday": 209.12,
-    "Saturday": 223.67,
-    "Sunday": 234.41,
-    "jsonData": "{data: [245.21,242.78,330.36,148.13,209.12,223.67,234.41]}"
+    "device_id": 2,
+    "device_name": "Fridge",
+    "device_status": true,
+    "last_started": "2021-02-26T19:21:55.990Z",
+    "status_value": "ON"
    },
    {
-    "week_id": 3,
-    "Monday": 320.45,
-    "Tuesday": 206.34,
-    "Wednesday": 298.34,
-    "Thursday": 167.23,
-    "Friday": 167.23,
-    "Saturday": 201.23,
-    "Sunday": 195.26,
-    "jsonData": "{data: [320.45,206.34,298.34,167.23,167.23,201.23,195.26]}"
+    "device_id": 3,
+    "device_name": "Door Lock",
+    "device_status": true,
+    "last_started": "2021-02-26T19:22:20.727Z",
+    "status_value": "ON"
+   },
+   {
+    "device_id": 4,
+    "device_name": "Fan",
+    "device_status": true,
+    "last_started": "2021-02-26T19:22:31.703Z",
+    "status_value": "ON"
    }
   ]
  ],
  "recordset": [
   {
-   "week_id": 1,
-   "Monday": 253.24,
-   "Tuesday": 312.34,
-   "Wednesday": 300.56,
-   "Thursday": 198.23,
-   "Friday": 197.1,
-   "Saturday": 203.45,
-   "Sunday": 268.76,
-   "jsonData": "{data: [253.24,312.34,300.56,198.23,197.10,203.45,268.76]}"
+   "device_id": 1,
+   "device_name": "Bulb",
+   "device_status": true,
+   "last_started": "2021-02-26T19:17:44.500Z",
+   "status_value": "ON"
   },
   {
-   "week_id": 2,
-   "Monday": 245.21,
-   "Tuesday": 242.78,
-   "Wednesday": 330.36,
-   "Thursday": 148.13,
-   "Friday": 209.12,
-   "Saturday": 223.67,
-   "Sunday": 234.41,
-   "jsonData": "{data: [245.21,242.78,330.36,148.13,209.12,223.67,234.41]}"
+   "device_id": 2,
+   "device_name": "Fridge",
+   "device_status": true,
+   "last_started": "2021-02-26T19:21:55.990Z",
+   "status_value": "ON"
   },
   {
-   "week_id": 3,
-   "Monday": 320.45,
-   "Tuesday": 206.34,
-   "Wednesday": 298.34,
-   "Thursday": 167.23,
-   "Friday": 167.23,
-   "Saturday": 201.23,
-   "Sunday": 195.26,
-   "jsonData": "{data: [320.45,206.34,298.34,167.23,167.23,201.23,195.26]}"
+   "device_id": 3,
+   "device_name": "Door Lock",
+   "device_status": true,
+   "last_started": "2021-02-26T19:22:20.727Z",
+   "status_value": "ON"
+  },
+  {
+   "device_id": 4,
+   "device_name": "Fan",
+   "device_status": true,
+   "last_started": "2021-02-26T19:22:31.703Z",
+   "status_value": "ON"
   }
  ],
  "output": {},
  "rowsAffected": [
-  3
+  4
  ]
 }

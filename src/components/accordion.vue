@@ -9,8 +9,8 @@
       </div>
     <div class="wrapper" >
       <div class="infoPair">
-          <h3 class="dataLabel">Peak hours used:</h3>
-          <h3 class="dataPoint">5:00 PM - 7:00 PM </h3>
+          <h3 class="dataLabel">Last Opened:</h3>
+          <h3 class="dataPoint">{{doorTimeStamp}}</h3>
       </div>
           <div class ="icon" >
               <font-awesome-icon
@@ -111,6 +111,7 @@ return{
   yearlyFan: [],
   yearlyFridge: [],
   yearlyBulb: [],
+  doorTimeStamp: [],
 }
   },
   methods:{
@@ -122,6 +123,13 @@ beforeCreate(){
     this.yearlyFan = response.data[0].yearlyFan.toFixed(2);
     this.yearlyFridge = response.data[0].yearlyFridge.toFixed(2);
     this.yearlyBulb = response.data[0].yearlyBulb.toFixed(2);
+  }).catch(error => {
+    console.log(error);
+  }),
+  axios.get('/cacheDB/deviceStatus.JSON')
+  .then(response => {
+    // this.allstats = response.data.recordset;
+    this.doorTimeStamp = response.data.recordset[2].last_started.replace("T"," ").replace("."," ").substring(0,19);
   }).catch(error => {
     console.log(error);
   })

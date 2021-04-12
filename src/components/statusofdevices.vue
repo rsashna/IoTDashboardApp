@@ -11,7 +11,7 @@
             fixed-width
             style="color: var(--dynamic-icon-color);">
           </font-awesome-icon>
-          <h3 class="subtitle dynamic-subtitle"> {{statusDoor.status_value}} </h3>
+          <h3 class="subtitle dynamic-subtitle"> {{statusDoor}} </h3>
       </div>
       <div class ="icon">
           <font-awesome-icon
@@ -55,10 +55,15 @@ export default {
     axios.get('/cacheDB/deviceStatus.JSON')
     .then(response => {
       this.allstats = response.data.recordset;
-      this.statusDoor = response.data.recordset[2];
+      // this.statusDoor = response.data.recordset[2];
       this.statusFan = response.data.recordset[3];
       this.statusFridge = response.data.recordset[1];
       this.statusLightBulb = response.data.recordset[0];
+      if(response.data.recordset[2].status_value == 'ON'){
+        this.statusDoor = 'OPEN';
+      }else if (response.data.recordset[2].status_value == 'OFF') {
+        this.statusDoor = 'CLOSED';
+      };
     }).catch(error => {
       console.log(error);
     })
