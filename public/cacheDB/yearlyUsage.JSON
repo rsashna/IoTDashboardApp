@@ -2,101 +2,41 @@
  "recordsets": [
   [
    {
-    "year_ID": 2018,
-    "January": 1653,
-    "February": 1239,
-    "March": 808,
-    "April": 808,
-    "May": 1767,
-    "June": 1531,
-    "July": 1295,
-    "August": 1238,
-    "September": 1119,
-    "October": 908,
-    "November": 1658,
-    "December": 1131
-   },
-   {
-    "year_ID": 2019,
-    "January": 1538,
-    "February": 1432,
-    "March": 828,
-    "April": 881,
-    "May": 1386,
-    "June": 1310,
-    "July": 1414,
-    "August": 1083,
-    "September": 813,
-    "October": 1264,
-    "November": 1101,
-    "December": 1511
-   },
-   {
-    "year_ID": 2020,
-    "January": 1172,
-    "February": 1411,
-    "March": 927,
-    "April": 910,
-    "May": 1668,
-    "June": 1318,
-    "July": 1675,
-    "August": 949,
-    "September": 972,
-    "October": 1512,
-    "November": 1669,
-    "December": 1248
+    "year_ID": 2002,
+    "January": 966,
+    "February": 927,
+    "March": 1693,
+    "April": 1321,
+    "May": 1102,
+    "June": 1171,
+    "July": 821,
+    "August": 1113,
+    "September": 1487,
+    "October": 1032,
+    "November": 1722,
+    "December": 1461
    }
   ]
  ],
  "recordset": [
   {
-   "year_ID": 2018,
-   "January": 1653,
-   "February": 1239,
-   "March": 808,
-   "April": 808,
-   "May": 1767,
-   "June": 1531,
-   "July": 1295,
-   "August": 1238,
-   "September": 1119,
-   "October": 908,
-   "November": 1658,
-   "December": 1131
-  },
-  {
-   "year_ID": 2019,
-   "January": 1538,
-   "February": 1432,
-   "March": 828,
-   "April": 881,
-   "May": 1386,
-   "June": 1310,
-   "July": 1414,
-   "August": 1083,
-   "September": 813,
-   "October": 1264,
-   "November": 1101,
-   "December": 1511
-  },
-  {
-   "year_ID": 2020,
-   "January": 1172,
-   "February": 1411,
-   "March": 927,
-   "April": 910,
-   "May": 1668,
-   "June": 1318,
-   "July": 1675,
-   "August": 949,
-   "September": 972,
-   "October": 1512,
-   "November": 1669,
-   "December": 1248
+   "year_ID": 2002,
+   "January": 966,
+   "February": 927,
+   "March": 1693,
+   "April": 1321,
+   "May": 1102,
+   "June": 1171,
+   "July": 821,
+   "August": 1113,
+   "September": 1487,
+   "October": 1032,
+   "November": 1722,
+   "December": 1461
   }
  ],
  "output": {},
  "rowsAffected": [
-  3
+  1
  ]
 }

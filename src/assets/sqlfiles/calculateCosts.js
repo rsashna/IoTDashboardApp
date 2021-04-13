@@ -1,5 +1,8 @@
 const axios = require('axios');
 var fs = require('fs');
+const {performance} = require('perf_hooks');
+
+var startM = performance.now();
 // local rates in $/kWh
 var off_peak = 0.085;
 var mid_peak = 0.119;
@@ -190,6 +193,9 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
       fs.writeFile('./../../../public/cacheDB/sumCosts.JSON', summaryCosts, written);
       // console.log(calcCosts);
       console.log('SumCost File write complete');
+      var timeM = performance.now() - startM;
+      var msg ="\ncalculateCosts.js " + timeM;
+      fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
       function written(err){
       console.log(err);
       }

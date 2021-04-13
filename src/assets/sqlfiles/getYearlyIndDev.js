@@ -28,9 +28,11 @@ function yearlyBulbData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/yearlyBulbUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getYearlyIndDev.js p1 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Yearly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })
@@ -57,9 +59,11 @@ function yearlyFridgeData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/yearlyFridgeUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getYearlyIndDev.js p2 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Yearly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })
@@ -86,9 +90,11 @@ function yearlyFanData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/yearlyFanUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getYearlyIndDev.js p3 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Yearly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })
