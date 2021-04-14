@@ -95,11 +95,11 @@ export default {
 		}
   }, methods:{
     },
-    beforeCreate(){
+    created(){
       axios.get('/cacheDB/weeklyUsage.JSON')
       .then(response => {
         var weeklyData1 = response.data.recordset[0].jsonData.split("[")[1].split("]")[0].split(",");
-        this.alldata = weeklyData1;
+        // this.alldata = weeklyData1;
         this.basicDataWeekly.datasets[0].data=weeklyData1;
         var weeklyData2 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
         this.basicDataWeekly.datasets[1].data=weeklyData2;
@@ -109,7 +109,7 @@ export default {
         axios.get('/cacheDB/monthlyUsage.JSON')
         .then(response => {
             var monthlyData1 = response.data.recordset[1].jsonData.split("[")[1].split("]")[0].split(",");
-            this.alldata = monthlyData1;
+            // this.alldata = monthlyData1;
             this.basicDataMonthly.datasets[0].data=monthlyData1;
             var monthlyData2 = response.data.recordset[0].jsonData.split("[")[1].split("]")[0].split(",");
             this.basicDataMonthly.datasets[1].data=monthlyData2;
@@ -131,7 +131,7 @@ export default {
             var y10 = response.data.recordset[1].November;
             var y11 = response.data.recordset[1].December;
 
-            this.alldata = y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11;
+            // this.alldata = y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11;
 
             this.basicDataYearly.datasets[0].data[0] = y0;
             this.basicDataYearly.datasets[0].data[1] = y1;
@@ -160,7 +160,7 @@ export default {
             var y100 = response.data.recordset[0].November;
             var y111 = response.data.recordset[0].December;
 
-            this.alldata = y00,y12,y22,y33,y44,y55,y66,y77,y88,y99,y100,y111;
+            // this.alldata = y00,y12,y22,y33,y44,y55,y66,y77,y88,y99,y100,y111;
 
             this.basicDataYearly.datasets[1].data[0] = y00;
             this.basicDataYearly.datasets[1].data[1] = y12;

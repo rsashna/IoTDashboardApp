@@ -1,10 +1,16 @@
 File | Loading Time in ms
 ---------------------------
 ---need data for:
-getStatus, getWeekly, getMonthly, getYearly, getWeeklyIndDev, getYearlyIndDev, getMonthlyIndDev---
+getStatus, getTrendData, getWeeklyIndDev, getYearlyIndDev, getMonthlyIndDev, calculateCosts.js---
 --for all get___IndDev record only highest time from p1/p2/p3 since they are sync fns--
+--for getYearly.js getWeekly.js getMonthly.js record only highest time since they are sync fns, call it getTrendData.js--
   ---To test everything run getStatus.js, getTrendData.js, getWeeklyIndDev, getYearlyIndDev, getMonthlyIndDev, calculateCosts.js---
 
+RERUN THESE || NUMBER OF TIMES
+getWeeklyIndDev 2
+getMonthlyIndDev 3
+getYearly 2
+getYearly 2
 
 getMonthlyIndDev.js p1 1780getMonthlyIndDev.js p3 1781getMonthlyIndDev.js p2 1782
 getStatus 2612
@@ -41,3 +47,7 @@ calculateCosts.js 31.178643703460693
 calculateCosts.js 29.1344575881958
 calculateCosts.js 33.69433259963989
 calculateCosts.js 31.390324115753174
+
+getYearly.js 1168.0973472595215
+getMonthly.js 1048.3738350868225getYearlyIndDev.js p2 2057getYearlyIndDev.js p1 2065getYearlyIndDev.js p3 2075
+calculateCosts.js 46.4918270111084

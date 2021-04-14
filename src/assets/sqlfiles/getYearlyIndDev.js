@@ -5,7 +5,7 @@ var fs = require('fs');
 const config = {
     user: 'adminhome',
     password: 'home123#',
-    server: 'homecloudcapstone.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+    server: 'homecloudcapstone2.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
     database: 'smart_home_cloud_database',
     "options": {
         "encrypt": true,
