@@ -21,15 +21,16 @@ function getDataWeekly() {
             .then(function () {
                 new sql.Request()
                     // .query("select * from Smart_Devices")
-                    .query("SELECT * FROM Weekly_usage")
+                    // .query("SELECT * FROM Weekly_usage")
                     // .query("select * from Yearly_usage")
+                    .query("SELECT * FROM yearlyFanUse")
                     .then(function (dbData) {
                         if (dbData == null || dbData.length === 0)
                             return;
                         console.dir('All the Data');
                         console.log(dbData);
                         var dataw = JSON.stringify(dbData, null, 1);
-                        fs.writeFile('./../../../public/cacheDB/tryer.JSON', dataw, written);
+                        fs.writeFile('./../../../public/cacheDB/tryeryearlyFanUse.JSON', dataw, written);
                         function written(err){
                           console.log('Weekly File write complete');
                           var timeW = new Date() - startW;

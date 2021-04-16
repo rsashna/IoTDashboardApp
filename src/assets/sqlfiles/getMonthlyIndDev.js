@@ -5,7 +5,7 @@ var fs = require('fs');
 const config = {
     user: 'adminhome',
     password: 'home123#',
-    server: 'homecloudcapstone.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+    server: 'homecloudcapstone2.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
     database: 'smart_home_cloud_database',
     "options": {
         "encrypt": true,
@@ -28,9 +28,11 @@ function monthlyBulbData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/monthlyBulbUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getMonthlyIndDev.js p1 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Monthly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })
@@ -57,9 +59,11 @@ function monthlyFridgeData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/monthlyFridgeUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getMonthlyIndDev.js p2 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Monthly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })
@@ -86,9 +90,11 @@ function monthlyFanData() {
                             return;
                         var dataw = JSON.stringify(dbData, null, 1);
                         fs.writeFile('./../../../public/cacheDB/monthlyFanUse.JSON', dataw, written);
+                        var timeW = new Date() - startW;
+                        var msg ="getMonthlyIndDev.js p3 " + timeW;
+                        fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
                         function written(err){
                           console.log('Monthly File write complete');
-                          var timeW = new Date() - startW;
                           console.log("Time to execute: " + timeW +"ms");
                         }
                     })

@@ -1,5 +1,8 @@
 const axios = require('axios');
 var fs = require('fs');
+const {performance} = require('perf_hooks');
+
+var startM = performance.now();
 // local rates in $/kWh
 var off_peak = 0.085;
 var mid_peak = 0.119;
@@ -190,23 +193,13 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
       fs.writeFile('./../../../public/cacheDB/sumCosts.JSON', summaryCosts, written);
       // console.log(calcCosts);
       console.log('SumCost File write complete');
+      var timeM = performance.now() - startM;
+      var msg ="\ncalculateCosts.js " + timeM;
+      fs.writeFile('./helpers/dataFetchTimes.JSON', msg, {'flag':'a'}, written);
       function written(err){
       console.log(err);
       }
     }
-  //   const customer = {
-  //   name: "Newbie Co.",
-  //   order_count: 0,
-  //   address: "Po Box City",
-  //   }
-  //   const jsonString = JSON.stringify(customer)fs.writeFile('./../../../public/cacheDB/estCosts.JSON', jsonString, written)
-  //   function written(err){
-  //   if (err) {
-  //       console.log('Error writing file', err)
-  //   } else {
-  //       console.log('Successfully wrote file')
-  //   }
-  // })
 
     }).catch(error => {
       console.log(error);
@@ -218,24 +211,5 @@ axios.get('http://localhost:8080//cacheDB/weeklyFanUse.JSON')
 
   async function main() {
       var result = await makeGetRequest();
-      // console.log("I waited.");
-      //var res2 = await forAsync();
-
-  // weeklyCost = weeklyFan + weeklyFridge + weeklyBulb;
-  // monthlyCost = monthlyFan + monthlyFridge + monthlyBulb;
-  // yearlyCost = yearlyFan + yearlyFridge + yearlyBulb;
-
-  // For annual estimated cost accordion portion use yearlyFan, yearlyFridge & yearlyBulb;
-  // weeklyCost=
-  // monthlyCost=
-  // yearlyCost=
-  // monthlyFan=
-  // monthlyFridge=
-  // monthlyBulb=
-  // console.log("cant be NAN" + weeklyCost,monthlyCost, yearlyCost, monthlyFan,monthlyFridge,monthlyBulb);
- // console.log("WHyy these" + mOnPeakFr, mOffPeakFr, mMidPeakFr);
- // console.log("apparently these are fine" + weeklyFan , weeklyFridge, weeklyBulb);
-// console.log("apparently these within these are fine" + wOnPeakF , wOffPeakF, wMidPeakF);
-
   }
   main();

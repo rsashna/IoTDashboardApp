@@ -1,0 +1,78 @@
+File | Loading Time in ms
+---------------------------
+---need data for:
+getStatus, getTrendData, getWeeklyIndDev, getYearlyIndDev, getMonthlyIndDev, calculateCosts.js---
+--for all get___IndDev record only highest time from p1/p2/p3 since they are sync fns--
+--for getYearly.js getWeekly.js getMonthly.js record only highest time since they are sync fns, call it getTrendData.js--
+  ---To test everything run getStatus.js, getTrendData.js, getWeeklyIndDev, getYearlyIndDev, getMonthlyIndDev, calculateCosts.js---
+
+RERUN THESE || NUMBER OF TIMES
+getWeeklyIndDev 2
+getMonthlyIndDev 3
+getYearly 2
+getYearly 2
+
+getMonthlyIndDev.js p1 1780getMonthlyIndDev.js p3 1781getMonthlyIndDev.js p2 1782
+getStatus 2612
+getStatus 2059
+getStatus 2278
+getStatus 2261
+getWeekly.js 943.7270159721375
+getMonthly.js 957.6461081504822
+getYearly.js 979.5383257865906
+getWeekly.js 1121.435749053955
+getYearly.js 1123.1089129447937
+getMonthly.js 1122.1699090003967
+getWeekly.js 1920.7937817573547
+getYearly.js 1921.953619003296
+getMonthly.js 1921.1640853881836
+getWeeklyIndDev.js p3 2437 getWeeklyIndDev.js p2 2435 getWeeklyIndDev.js p1 2436
+getWeeklyIndDev.js p2 1481getWeeklyIndDev.js p1 1480getWeeklyIndDev.js p3 1489
+getWeeklyIndDev.js p1 1412getWeeklyIndDev.js p3 1416getWeeklyIndDev.js p2 1417
+getYearlyIndDev.js p2 1559getYearlyIndDev.js p1 1561getYearlyIndDev.js p3 1585
+getYearlyIndDev.js p1 1219getYearlyIndDev.js p2 1241getYearlyIndDev.js p3 1248
+getYearlyIndDev.js p1 1702getYearlyIndDev.js p2 1704getYearlyIndDev.js p3 1704
+getMonthlyIndDev.js p1 2339 getMonthlyIndDev.js p2 2341 getMonthlyIndDev.js p3 2341
+
+getStatus 2341
+getMonthly.js 1033.2739472389221
+getWeekly.js 1034.7466702461243
+getYearly.js 1035.0743246078491
+getWeekly.js 1383.622441291809
+getMonthly.js 1419.4699597358704
+getYearly.js 1461.577419757843
+
+calculateCosts.js 36.88432788848877
+calculateCosts.js 31.178643703460693
+calculateCosts.js 29.1344575881958
+calculateCosts.js 33.69433259963989
+calculateCosts.js 31.390324115753174
+
+getYearly.js 1168.0973472595215
+getMonthly.js 1048.3738350868225getYearlyIndDev.js p2 2057getYearlyIndDev.js p1 2065getYearlyIndDev.js p3 2075
+calculateCosts.js 46.4918270111084
+getWeekly.js 1906.6578574180603
+getMonthly.js 1907.5469212532043
+getYearly.js 1946.6233892440796
+getWeekly.js 957.0773901939392
+getMonthly.js 957.8586721420288
+getYearly.js 994.8942422866821
+getWeekly.js 1063.6777901649475
+getMonthly.js 1076.492624759674
+getYearly.js 1105.2347111701965
+getWeeklyIndDev.js p1 1399getWeeklyIndDev.js p2 1444getWeeklyIndDev.js p3 1494
+getWeeklyIndDev.js p2 1276getWeeklyIndDev.js p1 1274getWeeklyIndDev.js p3 1317
+getWeeklyIndDev.js p1 1687getWeeklyIndDev.js p2 1688getWeeklyIndDev.js p3 1712
+getWeeklyIndDev.js p1 1534getWeeklyIndDev.js p3 1536getWeeklyIndDev.js p2 1536
+getMonthlyIndDev.js p1 1186getMonthlyIndDev.js p2 1192getMonthlyIndDev.js p3 1237
+getMonthlyIndDev.js p3 2105getMonthlyIndDev.js p2 2107getMonthlyIndDev.js p1 2106g
+etMonthlyIndDev.js p1 1338getMonthlyIndDev.js p2 1353getMonthlyIndDev.js p3 1356
+getMonthlyIndDev.js p2 1544getMonthlyIndDev.js p1 1545getMonthlyIndDev.js p3 1560
+getMonthlyIndDev.js p1 1217getMonthlyIndDev.js p3 1219getMonthlyIndDev.js p2 1219
+getMonthlyIndDev.js p1 1709getMonthlyIndDev.js p2 1743getMonthlyIndDev.js p3 1750
+getYearlyIndDev.js p3 2638getYearlyIndDev.js p2 2639getYearlyIndDev.js p1 2640
+getYearlyIndDev.js p1 1294getYearlyIndDev.js p2 1301getYearlyIndDev.js p3 1302
+getYearlyIndDev.js p1 1300getYearlyIndDev.js p2 1305getYearlyIndDev.js p3 1344
+getYearlyIndDev.js p2 1408getYearlyIndDev.js p1 1409getYearlyIndDev.js p3 1430
+getYearlyIndDev.js p1 1327getYearlyIndDev.js p2 1329getYearlyIndDev.js p3 1328
+getYearlyIndDev.js p1 1279getYearlyIndDev.js p2 1323getYearlyIndDev.js p3 1366
