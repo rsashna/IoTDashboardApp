@@ -7,15 +7,16 @@ The Home IoT Dashboard is an interactive browser based application for the Home 
 The backend of the Dashboard connects to MS Azure ML and Cloud Database to retrieve data insights periodically and stores this data within the application's cache database. The Dashboard connects directly with the Device Controller to operate the smart home devices when the user is in the local IoT Home Network.
 
 The following sections are included in the dashboard:
--Status of Devices
--Livestream Video of Door
--Estimated Costs
--Device Usage Trends
--Device Summary
--Light/Dark Theme Switch
--Notification Banner
 
-Screenshots shown below.
+* -Status of Devices
+* -Livestream Video of Door
+* -Estimated Costs
+* -Device Usage Trends
+* -Device Summary
+* -Light/Dark Theme Switch
+* -Notification Banner
+
+*Screenshots shown below*
 
 ### Overview of the Network
 
@@ -26,30 +27,32 @@ The Dashboard application's local cache database fetches data from the cloud dat
 
 ### Home IoT Network Tech Stack
 
-Bevywise IoT Simulator (smart home devices)
-Bevywise MQTT Broker (device controller)
+* Bevywise IoT Simulator (smart home devices)
+* Bevywise MQTT Broker (device controller)
 
-Linux Virtual Machine (home environment)
-Apache Tomcat Local Server (controller in home environment)
+* Linux Virtual Machine (home environment)
+* Apache Tomcat Local Server (controller in home environment)
 
-Vue.js
-Node.js
-JSON
-WebRTC
+* Vue.js
+* Node.js
+* JSON
+* WebRTC
 
-MS Azure Machine Learning
-MS Azure SQL Database
+* MS Azure Machine Learning
+* MS Azure SQL Database
 
-Firefox Dev Tools
+* Firefox Dev Tools
 
 
 ### Network Performance
 
+The following metrics show the overall latency of using the network to load the dashboard application. This was tested with throttled internet and emptied browser cache to show the worst case loading speeds.
+
 |Request Type|Avg Latency|Notes|
 |----------|----------|--------|
-|Dashboard Loading on WiFi|4.8s|Without browser cache|
-|Dashboard Loading on 4G/LTE|36.0s|Without browser cache|
-|Weekly Data Fetch Cycle|36.0s|Includes data fetching from cloud server, calculation, write out to cache database|
+|Dashboard Loading on WiFi|4.8s|Without previous browser cache|
+|Dashboard Loading on 4G/LTE|36.0s|Without previous browser cache|
+|Weekly Data Fetch Cycle|8364 ms|Includes data fetching from cloud server, calculation, write out to cache database|
 
 #### Screenshots of the Home IoT Dashboard
 
