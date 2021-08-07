@@ -22,11 +22,11 @@ The *Home IoT Dashboard* is a browser based application that can be used on any 
 
 |Dashboard on Monitors (large device)|Dashboard on Mobile (small device)|
 |:----------:|:--------:|
-|![Screen shot](./gitReadmeImgs/dashboardScreen1.jpg =400x)|![Screen shot](./gitReadmeImgs/responsiveSmallDevice.jpg =250x)|
+|![Screen shot](./gitReadmeImgs/dashboardScreen1.jpg)|![Screen shot](./gitReadmeImgs/responsiveSmallDevice.jpg)|
 
 |Light Mode|Dark Mode|
 |:----------:|:--------:|
-|![Screen shot](./gitReadmeImgs/dashboardLightMode.jpg =250x)|![Screen shot](./gitReadmeImgs/dashboardDarkMode.jpg =250x)|
+|![Screen shot](./gitReadmeImgs/dashboardLightMode.jpg)|![Screen shot](./gitReadmeImgs/dashboardDarkMode.jpg)|
 
 ### Overview of the Network
 
