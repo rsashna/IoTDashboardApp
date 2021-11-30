@@ -1,8 +1,8 @@
-# iotDashboard
+# Home IoT Dashboard
 
-### Overview of the Application
+### Overview of the Dashboard Application
 
-The *Home IoT Dashboard* is an interactive browser based application for our *Home IoT Network.* This network was created for our final year Capstone project. The dashboard gives greater monitoring, control, and security features for the user's smarthome devices from a unified browser based application. The dashboard app allows users to interact with the network in real time through their computer, tablet, or smart phone devices both locally and outside of the network.
+The *Home IoT Dashboard* is an interactive browser based application made for our *Home IoT Network.* This network was created for our final year Capstone project. The dashboard gives greater monitoring, control, and security features for the user's smarthome devices from a unified browser based application. The dashboard app allows users to interact with the network in real time through their computer, tablet, or smart phone devices both locally and outside of the network.
 
 The backend of the Dashboard connects to MS Azure ML and Azure SQL Database for big data archival and cloud computing. The Dashboard also connects directly with the Device Controller to operate the smarthome devices when the user is in the local IoT Home Network.
 
@@ -13,8 +13,11 @@ The following features are included in the dashboard:
 * Estimated Costs
 * Device Usage Trends
 * Device Summary
-* Light/Dark Theme Switch
 * Notification Banner
+* Light/Dark Theme Switch
+* Responsive dashboard design 
+  * monitors, smartphone, tablets 
+* Latency optimization
 
 #### Screenshots of the Home IoT Dashboard
 
@@ -42,23 +45,21 @@ The Dashboard application has a local cache database in the backend that fetches
 
 ### Home IoT Network's Main Tech Stack
 
+Home IoT Network's Main Tech Stack
+* Vue.js (dashboard front end)
+* Node.js (dashboard back end)
+* MS Azure Machine Learning (cloud data processor)
+* MS Azure SQL Database (cloud data storage)
+* JSON (local cache database)
 * Bevywise IoT Simulator (smarthome devices)
-* Bevywise MQTT Broker (device controller)
 * laptop camera (security camera device)
-
+* Bevywise MQTT Broker (device controller)
+* WebRTC (real time camera streaming)
 * Linux Virtual Machine (home environment)
 * Apache Tomcat Local Server (controller in home environment)
+* Mocha and Chai (dashboard testing)
+* Firefox Dev Tools (performance testing)
 
-* Vue.js
-* Node
-* JSON (cache DB)
-* Mocha and Chai (testing)
-* WebRTC
-
-* MS Azure Machine Learning
-* MS Azure SQL Database
-
-* Firefox Dev Tools
 
 
 ### Network Performance
